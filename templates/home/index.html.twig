@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Quai Antique - Accueil{% endblock %}
+
+{% block body %}
+
+<section class="main flux">
+    <h1 class="main__title">Bienvenue au Quai Antique !</h1>
+    <p class="main__text-presentation">Venez savourez des plats sans artifices, créés à partir de produits locaux !</p>
+</section>
+
+<section class="description flux">
+    <h2 class="description__title">A propos du Quai Antique.</h2>
+    <p class="description__text-presentation">
+        Le Quai Antique vient d'ouvrir ses portes.
+        Il est représenté par son fondateur et chef : le chef Arnaud Michant.
+        Ici, vous pourrez voyager au sein de son univers culinaire.
+        Aimant passionément son métier et le goût de la qualité, 
+        le chef Michant propose au déjeuner comme au dîner une expérience gastronomique à travers une cuisine sans artifice.
+        Pour cela, il a à coeur d'utiliser les produits locaux.
+        Venez redécourvrir la Savoie et ses plats typiques au travers la passion du chef Michant ! 
+        Nous vous attendons avec impatience !
+    </p>
+</section>
+
+<section class="famous-dishes flux">
+    <h2 class="famous-dishes__title">Nos plats phares.</h2>
+    <p class="famous-dishes__text-presentation">Voici quelques-uns de nos plats phares qui pourraient bien vous donner l'eau à la bouche !</p>
+    <div class="raclette-card">
+        <div class="raclette-card__view">
+            <img class="raclette-card__view--image" src="assets/images/plats/raclette_2_personnes.jpeg" alt="Raclette pour deux personnes.">
+        </div>
+        <div class="raclette-card__description">
+            <h3 class="raclette-card__description--title">La raclette.</h3>
+            <p class="raclette-card__description--text-presention">
+                La raclette est un plat typique de la Savoie.
+                Elle est composée de fromage à raclette, de pommes de terre, de charcuterie et est accompagnée d'une salade verte.
+            </p>
+        </div>
+    </div>
+    <div class="reblochon-card">
+        <div class="reblochon-card__description">
+            <h3 class="reblochon-card__description--title">La fondue de reblochon.</h3>
+            <p class="reblochon-card__description--text-presentation">
+                La fondue de reblochon est idéale pour partager un moment convivial.
+                Le reblochon est fabriqué ici même dans la région et le pain est fait maison.
+            </p>
+        </div>
+        <div class="reblochon-card__view">
+            <img class="reblochon-card__view--image" src="assets/images/plats/fondue_reblochon.jpeg" alt="Fondue de reblochon.">
+        </div>
+    </div>
+    <div class="tartiflette-card">
+        <div class="tartiflette-card__view">
+            <img class="tartiflette-card__view--image" src="assets/images/plats/tartiflette.jpeg" alt="Tartiflette faite maison.">
+        </div>
+        <div class="tartiflette-card__description">
+            <h3 class="tartiflette-card__description--title">La tartiflette.</h3>
+            <p class="tartiflette-card__description--text-presentation">
+                Faite maison, la tartiflette est le plat incontournable pour se réchauffer par temps froid l'hiver.
+            </p>
+        </div>
+    </div>
+    <div class="cammenbert-card">
+        <div class="cammenbert-card__description">
+            <h3 class="cammenbert-card__description--title">Le cammenbert fondu.</h3>
+            <p class="cammenbert-card__description--text-presentation">
+                Le cammenbert fondu est sans conteste l'un des produits les plus appréciés ici.
+                Sa particularité est d'être fondu dans la croûte de pain directement afin d'en savourer chaque morceau, 
+                et pourquoi pas même le partager à plusieurs !
+            </p>
+        </div>
+        <div class="cammenbert-card__view">
+            <img class="cammenbert-card__view--image" src="assets/images/plats/cammenbert_fondu.jpeg" alt="Cammenbert fondu dans sa croûte de pain.">
+        </div>
+    </div>
+
+    <button class="btn btn__primary">Réserver une table</button>
+</section>
+
+{% endblock %}

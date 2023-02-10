@@ -1,0 +1,19 @@
+@mixin responsive($device)
+    @if $device == "big-phone"
+        @media screen and (min-width: 482px)
+            @content
+
+    @else if $device == "litle-tablet"
+        @media screen and (min-width: 768px)
+            @content
+
+    @else if $device == "tablet"
+        @media screen and (min-width: 884px)
+            @content
+
+    @else if $device == "laptop"
+        @media screen and (min-width: 1100px)
+            @content
+
+    @else 
+        @error "La device passée n'existe pas"

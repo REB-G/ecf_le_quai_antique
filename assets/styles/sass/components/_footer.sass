@@ -1,0 +1,47 @@
+@use "../utils/_main" as utils
+
+.footer
+    background-color: utils.$gold
+    color: utils.$black
+    display: flex
+    align-items: center
+    justify-content: space-evenly
+
+    &__logo
+        width: 20vw
+    
+    &__container
+        +utils.responsive("litle-tablet")
+            display: flex
+            align-items: flex-start
+            justify-content: space-between
+    
+    &__contact
+        margin-top: 2vw
+
+        &--title
+            text-decoration: underline
+            @extend %title-3
+        
+        &--links
+            @extend %paragraphe-m
+
+        &--links:hover
+            color: utils.$brown
+    
+    &__legals
+        margin-top: 2vw
+
+        &--title
+            text-decoration: underline
+            @extend %title-3
+        
+        &--links
+            @extend %paragraphe-m
+
+        &--links:hover
+            color: utils.$brown
+
+    &__copyright
+        margin-top: 2vw
+        @extend %paragraphe-m

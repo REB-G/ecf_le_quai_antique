@@ -1,0 +1,15 @@
+@use "../utils/_main" as utils
+
+.btn
+    border-radius: 1.5rem
+    padding: 0.5rem 1.5rem
+    font-weight: 500
+    transition: 0.5s ease-in
+
+    &__primary
+        background-color: utils.$gold
+        color: utils.$black
+
+        &:hover
+            background-color: utils.$brown
+            color: utils.$gold
