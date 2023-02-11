@@ -23,6 +23,12 @@ class Reservation
     #[Assert\NotBlank('Veuillez renseigner l\'heure pour les réservation.')]
     private ?\DateTimeInterface $reservationTime = null;
 
+    #[ORM\ManyToOne(inversedBy: 'reservation')]
+    private ?Users $user = null;
+
+    #[ORM\ManyToOne(inversedBy: 'reservation')]
+    private ?Tables $restaurantTable = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -48,6 +54,30 @@ class Reservation
     public function setReservationTime(\DateTimeInterface $reservationTime): self
     {
         $this->reservationTime = $reservationTime;
+
+        return $this;
+    }
+
+    public function getUser(): ?Users
+    {
+        return $this->user;
+    }
+
+    public function setUser(?Users $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getRestaurantTable(): ?Tables
+    {
+        return $this->restaurantTable;
+    }
+
+    public function setRestaurantTable(?Tables $restaurantTable): self
+    {
+        $this->restaurantTable = $restaurantTable;
 
         return $this;
     }

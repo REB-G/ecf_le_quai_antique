@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UsersRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -54,10 +56,22 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\ManyToMany(targetEntity: Allergies::class, inversedBy: 'idUser')]
+    private Collection $idAllergy;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Tables::class)]
+    private Collection $restaurantTable;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Reservation::class)]
+    private Collection $reservation;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
         $this->updatedAt = new \DateTimeImmutable();
+        $this->idAllergy = new ArrayCollection();
+        $this->restaurantTable = new ArrayCollection();
+        $this->reservation = new ArrayCollection();
     }
 
     #[ORM\PreUpdate]
@@ -186,6 +200,81 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getIdAllergy(): Collection
+    {
+        return $this->idAllergy;
+    }
+
+    public function addIdAllergy(Allergies $idAllergy): self
+    {
+        if (!$this->idAllergy->contains($idAllergy)) {
+            $this->idAllergy->add($idAllergy);
+        }
+
+        return $this;
+    }
+
+    public function removeIdAllergy(Allergies $idAllergy): self
+    {
+        $this->idAllergy->removeElement($idAllergy);
+
+        return $this;
+    }
+
+    public function getRestaurantTable(): Collection
+    {
+        return $this->restaurantTable;
+    }
+
+    public function addRestaurantTable(Tables $restaurantTable): self
+    {
+        if (!$this->restaurantTable->contains($restaurantTable)) {
+            $this->restaurantTable->add($restaurantTable);
+            $restaurantTable->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRestaurantTable(Tables $restaurantTable): self
+    {
+        if ($this->restaurantTable->removeElement($restaurantTable)) {
+            // set the owning side to null (unless already changed)
+            if ($restaurantTable->getUser() === $this) {
+                $restaurantTable->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getReservation(): Collection
+    {
+        return $this->reservation;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservation->contains($reservation)) {
+            $this->reservation->add($reservation);
+            $reservation->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservation->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getUser() === $this) {
+                $reservation->setUser(null);
+            }
+        }
 
         return $this;
     }

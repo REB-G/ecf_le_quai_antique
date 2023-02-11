@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TablesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -25,6 +27,17 @@ class Tables
     #[ORM\Column(type: 'boolean')]
     #[Assert\NotBlank(message: 'Veuillez indiquer si la table est disponible ou non.')]
     private ?bool $isAvailable = null;
+
+    #[ORM\ManyToOne(inversedBy: 'restaurantTable')]
+    private ?Users $user = null;
+
+    #[ORM\OneToMany(mappedBy: 'restaurantTable', targetEntity: Reservation::class)]
+    private Collection $reservation;
+
+    public function __construct()
+    {
+        $this->reservation = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -63,6 +76,45 @@ class Tables
     public function setIsAvailable(bool $isAvailable): self
     {
         $this->isAvailable = $isAvailable;
+
+        return $this;
+    }
+
+    public function getUser(): ?Users
+    {
+        return $this->user;
+    }
+
+    public function setUser(?Users $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getReservation(): Collection
+    {
+        return $this->reservation;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservation->contains($reservation)) {
+            $this->reservation->add($reservation);
+            $reservation->setRestaurantTable($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservation->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getRestaurantTable() === $this) {
+                $reservation->setRestaurantTable(null);
+            }
+        }
 
         return $this;
     }
