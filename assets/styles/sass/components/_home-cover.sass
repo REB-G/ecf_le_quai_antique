@@ -2,6 +2,7 @@
 
 .main
     text-align: center
+    padding: 5vw
 
     &__title
         @extend %title-1
@@ -14,6 +15,7 @@
 
 .description
     text-align: center
+    padding: 0 7vw 7vw 7vw
 
     &__title
         @extend %title-2
@@ -39,12 +41,13 @@
         color: utils.$yellow-metal
 
 .raclette-card
-    background-color: utils.$yellow-metal
     display: flex
-    flex-direction: column
+    flex-direction: column-reverse
     align-items: center
     justify-content: center
-    max-width: 50%
+    max-width: 85%
+    margin: 4vw
+    margin-top: 5vw
     +utils.responsive(tablet)
         flex-direction: row
 
@@ -58,6 +61,7 @@
 
     &__description
         width: 50%
+        padding: 5vw
         text-align: center
 
         &--title
@@ -66,20 +70,21 @@
 
         &--text-presentation
             @extend %paragraphe-m
-            color: utils.$black
+            color: utils.$gold
 
 .reblochon-card
-    background-color: utils.$yellow-metal
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
-    max-width: 50%
+    max-width: 85%
+    margin: 4vw
     +utils.responsive(tablet)
         flex-direction: row
 
     &__description
         width: 50%
+        padding: 5vw
         text-align: center
 
         &--title
@@ -88,7 +93,7 @@
 
         &--text-presentation
             @extend %paragraphe-m
-            color: utils.$black
+            color: utils.$gold
 
     &__view
         width: 50%
@@ -99,12 +104,12 @@
             object-fit: cover
 
 .tartiflette-card
-    background-color: utils.$yellow-metal
     display: flex
-    flex-direction: column
+    flex-direction: column-reverse
     align-items: center
     justify-content: center
-    max-width: 50%
+    max-width: 85%
+    margin: 4vw
     +utils.responsive(tablet)
         flex-direction: row
 
@@ -118,6 +123,7 @@
 
     &__description
         width: 50%
+        padding: 5vw
         text-align: center
 
         &--title
@@ -126,20 +132,21 @@
 
         &--text-presentation
             @extend %paragraphe-m
-            color: utils.$black
+            color: utils.$gold
 
 .cammenbert-card
-    background-color: utils.$yellow-metal
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
-    max-width: 50%
+    max-width: 85%
+    margin: 4vw
     +utils.responsive(tablet)
         flex-direction: row
 
     &__description
         width: 50%
+        padding: 5vw
         text-align: center
 
         &--title
@@ -148,7 +155,7 @@
 
         &--text-presentation
             @extend %paragraphe-m
-            color: utils.$black
+            color: utils.$gold
 
     &__view
         width: 50%
@@ -157,3 +164,17 @@
             width: 100%
             height: 100%
             object-fit: cover
+
+.btn-reservation
+    border-radius: 1.5rem
+    font-weight: 500
+    transition: 0.5s ease-in
+    margin: 5vw
+    padding: 1vw
+    background-color: utils.$gold
+    color: utils.$black
+    cursor: pointer
+
+    &:hover
+        background-color: utils.$brown
+        color: utils.$gold

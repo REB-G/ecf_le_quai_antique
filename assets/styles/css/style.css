@@ -133,9 +133,25 @@ body {
   font-size: 1.5rem;
 }
 
-.footer {
+.btn {
+  border-radius: 1.5rem;
+  font-weight: 500;
+  transition: 0.5s ease-in;
+  margin: 0.7vw;
+}
+.btn__primary {
   background-color: #D6BE74;
   color: #000000;
+}
+.btn__primary:hover {
+  background-color: #8D3B09;
+  color: #D6BE74;
+}
+
+.footer {
+  color: #6C643C;
+  border-top: solid;
+  border-color: #6C643C;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -174,6 +190,7 @@ body {
 
 .main {
   text-align: center;
+  padding: 5vw;
 }
 .main__title {
   color: #D6BE74;
@@ -184,6 +201,7 @@ body {
 
 .description {
   text-align: center;
+  padding: 0 7vw 7vw 7vw;
 }
 .description__title {
   color: #D6BE74;
@@ -206,12 +224,13 @@ body {
 }
 
 .raclette-card {
-  background-color: #6C643C;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  max-width: 50%;
+  max-width: 85%;
+  margin: 4vw;
+  margin-top: 5vw;
 }
 @media screen and (min-width: 884px) {
   .raclette-card {
@@ -228,22 +247,23 @@ body {
 }
 .raclette-card__description {
   width: 50%;
+  padding: 5vw;
   text-align: center;
 }
 .raclette-card__description--title {
   color: #8D3B09;
 }
 .raclette-card__description--text-presentation {
-  color: #000000;
+  color: #D6BE74;
 }
 
 .reblochon-card {
-  background-color: #6C643C;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 50%;
+  max-width: 85%;
+  margin: 4vw;
 }
 @media screen and (min-width: 884px) {
   .reblochon-card {
@@ -252,13 +272,14 @@ body {
 }
 .reblochon-card__description {
   width: 50%;
+  padding: 5vw;
   text-align: center;
 }
 .reblochon-card__description--title {
   color: #8D3B09;
 }
 .reblochon-card__description--text-presentation {
-  color: #000000;
+  color: #D6BE74;
 }
 .reblochon-card__view {
   width: 50%;
@@ -270,12 +291,12 @@ body {
 }
 
 .tartiflette-card {
-  background-color: #6C643C;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  max-width: 50%;
+  max-width: 85%;
+  margin: 4vw;
 }
 @media screen and (min-width: 884px) {
   .tartiflette-card {
@@ -292,22 +313,23 @@ body {
 }
 .tartiflette-card__description {
   width: 50%;
+  padding: 5vw;
   text-align: center;
 }
 .tartiflette-card__description--title {
   color: #8D3B09;
 }
 .tartiflette-card__description--text-presentation {
-  color: #000000;
+  color: #D6BE74;
 }
 
 .cammenbert-card {
-  background-color: #6C643C;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 50%;
+  max-width: 85%;
+  margin: 4vw;
 }
 @media screen and (min-width: 884px) {
   .cammenbert-card {
@@ -316,13 +338,14 @@ body {
 }
 .cammenbert-card__description {
   width: 50%;
+  padding: 5vw;
   text-align: center;
 }
 .cammenbert-card__description--title {
   color: #8D3B09;
 }
 .cammenbert-card__description--text-presentation {
-  color: #000000;
+  color: #D6BE74;
 }
 .cammenbert-card__view {
   width: 50%;
@@ -333,11 +356,26 @@ body {
   object-fit: cover;
 }
 
-.btn {
+.btn-reservation {
   border-radius: 1.5rem;
-  padding: 0.5rem 1.5rem;
   font-weight: 500;
   transition: 0.5s ease-in;
+  margin: 5vw;
+  padding: 1vw;
+  background-color: #D6BE74;
+  color: #000000;
+  cursor: pointer;
+}
+.btn-reservation:hover {
+  background-color: #8D3B09;
+  color: #D6BE74;
+}
+
+.btn {
+  border-radius: 1.5rem;
+  font-weight: 500;
+  transition: 0.5s ease-in;
+  margin: 0.7vw;
 }
 .btn__primary {
   background-color: #D6BE74;
