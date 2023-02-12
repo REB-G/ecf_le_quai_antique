@@ -13,7 +13,7 @@ ul {
   list-style: none;
 }
 
-.header__title, .main__title {
+.main__title {
   font-family: "garamond", serif;
   font-size: 3rem;
 }
@@ -33,7 +33,7 @@ ul {
   font-size: 1.3rem;
 }
 
-.header__description, .main__text-presentation {
+.main__description, .main__text-presentation {
   font-family: "franckruehl", serif;
   font-size: 2rem;
 }
@@ -388,22 +388,22 @@ body {
   color: #D6BE74;
 }
 
-.header {
+.main {
   text-align: center;
   margin-top: 3vw;
 }
-.header__title {
+.main__title {
   text-align: center;
   margin-bottom: 5vw;
 }
-.header__description {
+.main__description {
   text-align: center;
 }
-.header__description--link {
+.main__description--link {
   text-decoration: underline;
   text-decoration-color: #6C643C;
 }
-.header__description--link:hover {
+.main__description--link:hover {
   color: #8D3B09;
   text-decoration-color: #8D3B09;
 }
