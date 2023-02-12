@@ -13,29 +13,44 @@ ul {
   list-style: none;
 }
 
-.main__title {
+.header__title, .main__title {
   font-family: "garamond", serif;
   font-size: 3rem;
 }
 
-.description__title, .famous-dishes__title, .raclette-card__description--title, .reblochon-card__description--title, .tartiflette-card__description--title, .cammenbert-card__description--title {
+.lunch-menu__description--title, .duo-menu__description--title, .gourmands-menu__description--title, .description__title, .famous-dishes__title, .raclette-card__description--title, .reblochon-card__description--title, .tartiflette-card__description--title, .cammenbert-card__description--title {
   font-family: "garamond", serif;
-  font-size: 2rem;
+  font-size: 2.3rem;
+}
+
+.lunch-menu__starters--title, .lunch-menu__main-courses--title, .lunch-menu__desserts--title, .duo-menu__main-courses--title, .duo-menu__desserts--title, .gourmands-menu__main-courses--title, .gourmands-menu__desserts--title {
+  font-family: "garamond", serif;
+  font-size: 1.7rem;
 }
 
 .footer__contact--title, .footer__legals--title {
   font-family: "garamond", serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
-.description__text-presentation, .famous-dishes__text-presentation, .raclette-card__description--text-presentation, .reblochon-card__description--text-presentation, .tartiflette-card__description--text-presentation, .cammenbert-card__description--text-presentation, .footer__contact--links, .footer__legals--links, .footer__copyright {
+.header__description, .main__text-presentation {
   font-family: "franckruehl", serif;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
-.main__text-presentation, .header__link {
+.lunch-menu__description--text, .lunch-menu__description--price, .duo-menu__description--text, .duo-menu__description--price, .gourmands-menu__description--text, .gourmands-menu__description--price, .description__text-presentation, .famous-dishes__text-presentation, .raclette-card__description--text-presentation, .reblochon-card__description--text-presentation, .tartiflette-card__description--text-presentation, .cammenbert-card__description--text-presentation {
+  font-family: "franckruehl", serif;
+  font-size: 1.7rem;
+}
+
+.lunch-menu__starters--list, .lunch-menu__main-courses--list, .lunch-menu__desserts--list, .duo-menu__main-courses--list, .duo-menu__desserts--list, .gourmands-menu__main-courses--list, .gourmands-menu__desserts--description, .gourmands-menu__desserts--list, .lunch-list__starters, .lunch-list__main-courses, .lunch-list__desserts, .duo-list__main-courses, .duo-list__desserts, .gourmands-list__main-courses, .gourmands-list__desserts, .header__link {
   font-family: "franckruehl", serif;
   font-size: 1.3rem;
+}
+
+.footer__contact--links, .footer__legals--links, .footer__copyright {
+  font-family: "franckruehl", serif;
+  font-size: 0.75rem;
 }
 
 .flux {
@@ -155,6 +170,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 10vw;
 }
 .footer__logo {
   width: 20vw;
@@ -220,6 +236,7 @@ body {
   color: #D6BE74;
 }
 .famous-dishes__text-presentation {
+  text-align: center;
   color: #6C643C;
 }
 
@@ -360,7 +377,7 @@ body {
   border-radius: 1.5rem;
   font-weight: 500;
   transition: 0.5s ease-in;
-  margin: 5vw;
+  margin-top: 5vw;
   padding: 1vw;
   background-color: #D6BE74;
   color: #000000;
@@ -369,6 +386,202 @@ body {
 .btn-reservation:hover {
   background-color: #8D3B09;
   color: #D6BE74;
+}
+
+.header {
+  text-align: center;
+  margin-top: 3vw;
+}
+.header__title {
+  text-align: center;
+  margin-bottom: 5vw;
+}
+.header__description {
+  text-align: center;
+}
+.header__description--link {
+  text-decoration: underline;
+  text-decoration-color: #6C643C;
+}
+.header__description--link:hover {
+  color: #8D3B09;
+  text-decoration-color: #8D3B09;
+}
+
+.lunch-menu {
+  text-align: center;
+}
+.lunch-menu__description {
+  margin-top: 10vw;
+}
+.lunch-menu__description--title {
+  margin-top: 4vw;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 0.5vw;
+}
+.lunch-menu__description--text {
+  margin-top: 2.5vw;
+  text-align: center;
+}
+.lunch-menu__description--price {
+  text-align: center;
+  margin-top: 1.5vw;
+  color: #8D3B09;
+}
+.lunch-menu__starters {
+  margin-top: 3.5vw;
+}
+.lunch-menu__starters--title {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+.lunch-menu__starters--list {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+.lunch-menu__main-courses {
+  margin-top: 3.5vw;
+  text-align: center;
+}
+.lunch-menu__main-courses--title {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+.lunch-menu__main-courses--list {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+.lunch-menu__desserts {
+  margin-top: 3.5vw;
+}
+.lunch-menu__desserts--title {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+.lunch-menu__desserts--list {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+
+.duo-menu {
+  text-align: center;
+}
+.duo-menu__description {
+  margin-top: 10vw;
+}
+.duo-menu__description--title {
+  margin-top: 4vw;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 0.5vw;
+}
+.duo-menu__description--text {
+  margin-top: 2.5vw;
+  text-align: center;
+}
+.duo-menu__description--price {
+  margin-top: 1.5vw;
+  color: #8D3B09;
+  text-align: center;
+}
+.duo-menu__main-courses {
+  margin-top: 3.5vw;
+}
+.duo-menu__main-courses--title {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+.duo-menu__main-courses--list {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+.duo-menu__desserts {
+  margin-top: 3.5vw;
+}
+.duo-menu__desserts--title {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+.duo-menu__desserts--list {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+
+.gourmands-menu {
+  text-align: center;
+}
+.gourmands-menu__description {
+  margin-top: 10vw;
+}
+.gourmands-menu__description--title {
+  margin-top: 4vw;
+  text-decoration: underline;
+  text-underline-offset: 0.5vw;
+  text-align: center;
+}
+.gourmands-menu__description--text {
+  margin-top: 2.5vw;
+  text-align: center;
+}
+.gourmands-menu__description--price {
+  margin-top: 1.5vw;
+  color: #8D3B09;
+  text-align: center;
+}
+.gourmands-menu__main-courses {
+  margin-top: 3.5vw;
+}
+.gourmands-menu__main-courses--title {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+.gourmands-menu__main-courses--list {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+.gourmands-menu__desserts {
+  margin-top: 3.5vw;
+}
+.gourmands-menu__desserts--title {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+.gourmands-menu__desserts--description {
+  margin-top: 0.5vw;
+  text-align: center;
+}
+.gourmands-menu__desserts--list {
+  margin-top: 1.3vw;
+  text-align: center;
+}
+
+.lunch-list__starters {
+  text-align: center;
+}
+
+.lunch-list__main-courses {
+  text-align: center;
+}
+
+.lunch-list__desserts {
+  text-align: center;
+}
+
+.duo-list__main-courses {
+  text-align: center;
+}
+
+.duo-list__desserts {
+  text-align: center;
+}
+
+.gourmands-list__main-courses {
+  text-align: center;
+}
+
+.gourmands-list__desserts {
+  text-align: center;
 }
 
 .btn {

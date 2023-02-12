@@ -7,6 +7,7 @@
     display: flex
     align-items: center
     justify-content: space-evenly
+    margin-top: 10vw
 
     &__logo
         width: 20vw
@@ -22,10 +23,10 @@
 
         &--title
             text-decoration: underline
-            @extend %title-3
+            @extend %title-4
         
         &--links
-            @extend %paragraphe-m
+            @extend %paragraphe-xs
 
         &--links:hover
             color: utils.$brown
@@ -35,14 +36,14 @@
 
         &--title
             text-decoration: underline
-            @extend %title-3
+            @extend %title-4
         
         &--links
-            @extend %paragraphe-m
+            @extend %paragraphe-xs
 
         &--links:hover
             color: utils.$brown
 
     &__copyright
         margin-top: 2vw
-        @extend %paragraphe-m
+        @extend %paragraphe-xs
