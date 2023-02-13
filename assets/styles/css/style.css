@@ -18,7 +18,7 @@ ul {
   font-size: 3rem;
 }
 
-.starter-dishes__title, .main-courses-dishes__title, .burgers-dishes__title, .vegetarians-dishes__title, .desserts-dishes__title, .lunch-menu__description--title, .duo-menu__description--title, .gourmands-menu__description--title, .description__title, .famous-dishes__title, .raclette-card__description--title, .reblochon-card__description--title, .tartiflette-card__description--title, .cammenbert-card__description--title {
+.starters-dishes__title, .main-courses-dishes__title, .burgers-dishes__title, .vegetarians-dishes__title, .desserts-dishes__title, .lunch-menu__description--title, .duo-menu__description--title, .gourmands-menu__description--title, .description__title, .famous-dishes__title, .raclette-card__description--title, .reblochon-card__description--title, .tartiflette-card__description--title, .cammenbert-card__description--title {
   font-family: "garamond", serif;
   font-size: 2.3rem;
 }
@@ -588,24 +588,24 @@ body {
   text-align: center;
   margin-top: 10vw;
 }
-.main-dishes__description {
-  margin-top: 5vw;
+.main-dishes__title {
+  margin-bottom: 5vw;
 }
-
-.starter-dishes {
+.starters-dishes {
   text-align: center;
-  margin-top: 10vw;
+  margin-top: 25vw;
+  padding-right: 5vw;
 }
-.starter-dishes__title {
+.starters-dishes__title {
   text-decoration: underline;
   text-underline-offset: 0.5vw;
 }
-.starter-dishes__list {
+.starters-dishes__list {
   margin-top: 5vw;
 }
 
 .bruschetta {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .bruschetta {
@@ -620,18 +620,14 @@ body {
 }
 .bruschetta__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .bruschetta__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .bruschetta__price {
-    width: 10vw;
-  }
-}
 
 .lettuce {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .lettuce {
@@ -646,18 +642,14 @@ body {
 }
 .lettuce__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .lettuce__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .lettuce__price {
-    width: 10vw;
-  }
-}
 
 .quinoa {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .quinoa {
@@ -672,18 +664,14 @@ body {
 }
 .quinoa__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .quinoa__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .quinoa__price {
-    width: 10vw;
-  }
-}
 
 .goat-cheese-salad {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .goat-cheese-salad {
@@ -698,18 +686,14 @@ body {
 }
 .goat-cheese-salad__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .goat-cheese-salad__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .goat-cheese-salad__price {
-    width: 10vw;
-  }
-}
 
 .pasta-salad {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .pasta-salad {
@@ -724,26 +708,23 @@ body {
 }
 .pasta-salad__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .pasta-salad__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .pasta-salad__price {
-    width: 10vw;
-  }
-}
 
 .main-courses-dishes {
   text-align: center;
-  margin-top: 10vw;
+  margin-top: 25vw;
+  padding-right: 5vw;
 }
 .main-courses-dishes__list {
   margin-top: 5vw;
 }
 
 .berthoud {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .berthoud {
@@ -758,18 +739,14 @@ body {
 }
 .berthoud__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .berthoud__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .berthoud__price {
-    width: 10vw;
-  }
-}
 
 .camembert {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .camembert {
@@ -784,18 +761,14 @@ body {
 }
 .camembert__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .camembert__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .camembert__price {
-    width: 10vw;
-  }
-}
 
 .croziflette {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .croziflette {
@@ -810,18 +783,14 @@ body {
 }
 .croziflette__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .croziflette__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .croziflette__price {
-    width: 10vw;
-  }
-}
 
 .reblochon-cheese-fondue {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .reblochon-cheese-fondue {
@@ -836,18 +805,14 @@ body {
 }
 .reblochon-cheese-fondue__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .reblochon-cheese-fondue__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .reblochon-cheese-fondue__price {
-    width: 10vw;
-  }
-}
 
 .three-cheese-fondue {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .three-cheese-fondue {
@@ -862,18 +827,14 @@ body {
 }
 .three-cheese-fondue__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .three-cheese-fondue__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .three-cheese-fondue__price {
-    width: 10vw;
-  }
-}
 
 .meat-fondue {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .meat-fondue {
@@ -888,18 +849,14 @@ body {
 }
 .meat-fondue__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .meat-fondue__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .meat-fondue__price {
-    width: 10vw;
-  }
-}
 
 .charcuterie-platter {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .charcuterie-platter {
@@ -914,18 +871,14 @@ body {
 }
 .charcuterie-platter__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .charcuterie-platter__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .charcuterie-platter__price {
-    width: 10vw;
-  }
-}
 
 .raclette-for-two {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .raclette-for-two {
@@ -940,18 +893,14 @@ body {
 }
 .raclette-for-two__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .raclette-for-two__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .raclette-for-two__price {
-    width: 10vw;
-  }
-}
 
 .raclette-for-many {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .raclette-for-many {
@@ -966,18 +915,14 @@ body {
 }
 .raclette-for-many__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .raclette-for-many__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .raclette-for-many__price {
-    width: 10vw;
-  }
-}
 
 .reblochon-tart {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .reblochon-tart {
@@ -992,18 +937,14 @@ body {
 }
 .reblochon-tart__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .reblochon-tart__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .reblochon-tart__price {
-    width: 10vw;
-  }
-}
 
 .tartiflette {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .tartiflette {
@@ -1018,19 +959,16 @@ body {
 }
 .tartiflette__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .tartiflette__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .tartiflette__price {
-    width: 10vw;
-  }
-}
 
 .burgers-dishes {
   text-align: center;
-  margin-top: 10vw;
+  margin-top: 25vw;
+  padding-right: 5vw;
 }
 .burgers-dishes__title {
   text-decoration: underline;
@@ -1041,7 +979,7 @@ body {
 }
 
 .double-cheddar-burger {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .double-cheddar-burger {
@@ -1056,18 +994,14 @@ body {
 }
 .double-cheddar-burger__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .double-cheddar-burger__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .double-cheddar-burger__price {
-    width: 10vw;
-  }
-}
 
 .double-cheese-burger {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .double-cheese-burger {
@@ -1082,18 +1016,14 @@ body {
 }
 .double-cheese-burger__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .double-cheese-burger__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .double-cheese-burger__price {
-    width: 10vw;
-  }
-}
 
 .meat-burger {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .meat-burger {
@@ -1108,18 +1038,14 @@ body {
 }
 .meat-burger__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .meat-burger__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .meat-burger__price {
-    width: 10vw;
-  }
-}
 
 .black-bread-burger {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .black-bread-burger {
@@ -1134,18 +1060,14 @@ body {
 }
 .black-bread-burger__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .black-bread-burger__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .black-bread-burger__price {
-    width: 10vw;
-  }
-}
 
 .reblochon-burger {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .reblochon-burger {
@@ -1160,19 +1082,16 @@ body {
 }
 .reblochon-burger__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .reblochon-burger__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .reblochon-burger__price {
-    width: 10vw;
-  }
-}
 
 .vegetarians-dishes {
   text-align: center;
-  margin-top: 10vw;
+  margin-top: 20vw;
+  padding-right: 5vw;
 }
 .vegetarians-dishes__title {
   text-decoration: underline;
@@ -1183,7 +1102,7 @@ body {
 }
 
 .rice-vegetables {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .rice-vegetables {
@@ -1198,18 +1117,14 @@ body {
 }
 .rice-vegetables__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .rice-vegetables__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .rice-vegetables__price {
-    width: 10vw;
-  }
-}
 
 .vegetables-soups {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .vegetables-soups {
@@ -1224,18 +1139,14 @@ body {
 }
 .vegetables-soups__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .vegetables-soups__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .vegetables-soups__price {
-    width: 10vw;
-  }
-}
 
 .vegetables-tower {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .vegetables-tower {
@@ -1250,18 +1161,14 @@ body {
 }
 .vegetables-tower__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .vegetables-tower__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .vegetables-tower__price {
-    width: 10vw;
-  }
-}
 
 .potatoes-garlic-soups {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .potatoes-garlic-soups {
@@ -1276,19 +1183,16 @@ body {
 }
 .potatoes-garlic-soups__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .potatoes-garlic-soups__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .potatoes-garlic-soups__price {
-    width: 10vw;
-  }
-}
 
 .desserts-dishes {
   text-align: center;
-  margin-top: 10vw;
+  margin-top: 25vw;
+  padding-right: 5vw;
 }
 .desserts-dishes__title {
   text-decoration: underline;
@@ -1299,7 +1203,7 @@ body {
 }
 
 .gourmet-coffee {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .gourmet-coffee {
@@ -1314,18 +1218,14 @@ body {
 }
 .gourmet-coffee__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .gourmet-coffee__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .gourmet-coffee__price {
-    width: 10vw;
-  }
-}
 
 .cheesecake {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .cheesecake {
@@ -1340,18 +1240,14 @@ body {
 }
 .cheesecake__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .cheesecake__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .cheesecake__price {
-    width: 10vw;
-  }
-}
 
 .chocolate-ice-cream {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .chocolate-ice-cream {
@@ -1366,18 +1262,14 @@ body {
 }
 .chocolate-ice-cream__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .chocolate-ice-cream__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .chocolate-ice-cream__price {
-    width: 10vw;
-  }
-}
 
 .chocolate-caramel-cake {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .chocolate-caramel-cake {
@@ -1392,18 +1284,14 @@ body {
 }
 .chocolate-caramel-cake__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .chocolate-caramel-cake__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .chocolate-caramel-cake__price {
-    width: 10vw;
-  }
-}
 
 .chocolate-marshmallows-cake {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .chocolate-marshmallows-cake {
@@ -1418,18 +1306,14 @@ body {
 }
 .chocolate-marshmallows-cake__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .chocolate-marshmallows-cake__price {
   color: #8D3B09;
 }
-@media screen and (min-width: 884px) {
-  .chocolate-marshmallows-cake__price {
-    width: 10vw;
-  }
-}
 
 .cream-cake {
-  margin-top: 5vw;
+  margin-top: 17vw;
 }
 @media screen and (min-width: 884px) {
   .cream-cake {
@@ -1444,14 +1328,10 @@ body {
 }
 .cream-cake__description {
   margin-top: 5vw;
+  padding: 5vw;
 }
 .cream-cake__price {
   color: #8D3B09;
-}
-@media screen and (min-width: 884px) {
-  .cream-cake__price {
-    width: 10vw;
-  }
 }
 
 .btn {
