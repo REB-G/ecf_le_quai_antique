@@ -50,15 +50,15 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\NotBlank(message: 'Veuillez renseigner un nombre de convives par défaut.')]
     private ?int $defaultNumberOfGuests = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $allergies = null;
+    
     #[ORM\Column(type: 'datetime_immutable', options: ['default' => 'CURRENT_TIMESTAMP'])]
     #[Assert\NotNull()]
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
-
-    #[ORM\ManyToMany(targetEntity: Allergies::class, inversedBy: 'idUser')]
-    private Collection $idAllergy;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Tables::class)]
     private Collection $restaurantTable;
@@ -70,7 +70,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->createdAt = new \DateTimeImmutable();
         $this->updatedAt = new \DateTimeImmutable();
-        $this->idAllergy = new ArrayCollection();
         $this->restaurantTable = new ArrayCollection();
         $this->reservation = new ArrayCollection();
     }
@@ -217,27 +216,18 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getIdAllergy(): Collection
+    public function getAllergies(): ?string
     {
-        return $this->idAllergy;
+        return $this->allergies;
     }
 
-    public function addIdAllergy(Allergies $idAllergy): self
+    public function setAllergies(?string $allergies): self
     {
-        if (!$this->idAllergy->contains($idAllergy)) {
-            $this->idAllergy->add($idAllergy);
-        }
+        $this->allergies = $allergies;
 
         return $this;
     }
-
-    public function removeIdAllergy(Allergies $idAllergy): self
-    {
-        $this->idAllergy->removeElement($idAllergy);
-
-        return $this;
-    }
-
+    
     public function getRestaurantTable(): Collection
     {
         return $this->restaurantTable;
@@ -256,7 +246,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function removeRestaurantTable(Tables $restaurantTable): self
     {
         if ($this->restaurantTable->removeElement($restaurantTable)) {
-            // set the owning side to null (unless already changed)
             if ($restaurantTable->getUser() === $this) {
                 $restaurantTable->setUser(null);
             }
@@ -283,7 +272,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function removeReservation(Reservation $reservation): self
     {
         if ($this->reservation->removeElement($reservation)) {
-            // set the owning side to null (unless already changed)
             if ($reservation->getUser() === $this) {
                 $reservation->setUser(null);
             }
