@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DishesController extends AbstractController
+class ConnectedUserController extends AbstractController
 {
-    #[Route('/carte', name: 'app_dishes')]
+    #[Route('/compte', name: 'app_connected_user')]
     public function index(): Response
     {
-        return $this->render('pages/dishes.html.twig', [
-            'controller_name' => 'DishesController',
+        return $this->render('connected_user/index.html.twig', [
+            'controller_name' => 'ConnectedUserController',
         ]);
     }
 }
