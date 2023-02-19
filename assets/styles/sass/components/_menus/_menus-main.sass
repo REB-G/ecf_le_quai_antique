@@ -1,0 +1,21 @@
+@use "../../../sass/utils/_main" as utils
+
+.main
+    text-align: center
+    margin-top: 3vw
+
+    &__title
+        @extend %title-1
+        text-align: center
+        margin-bottom: 5vw
+
+    &__description
+        @extend %paragraphe-l
+        text-align: center
+
+        &--link
+            text-decoration: underline
+            text-decoration-color: utils.$yellow-metal
+            &:hover
+                color: utils.$brown
+                text-decoration-color: utils.$brown

@@ -1,0 +1,77 @@
+@use "../../../sass/utils/_main" as utils
+
+.lunch-menu
+    text-align: center
+
+    &__description
+        margin-top: 10vw
+
+        &--title
+            margin-top: 4vw
+            @extend %title-2
+            text-align: center
+            text-decoration: underline
+            text-underline-offset: 0.5vw
+
+        &--text
+            margin-top: 2.5vw
+            @extend %paragraphe-m
+            text-align: center
+
+        &--price
+            text-align: center
+            margin-top: 1.5vw
+            color: utils.$brown
+            @extend %paragraphe-m
+
+    &__starters
+        margin-top: 3.5vw
+
+        &--title
+            margin-top: 1.3vw
+            @extend %title-3
+            text-align: center
+
+        &--list
+            margin-top: 1.3vw
+            @extend %paragraphe-s
+            text-align: center
+
+    &__main-courses
+        margin-top: 3.5vw
+        text-align: center
+
+        &--title
+            margin-top: 1.3vw
+            @extend %title-3
+            text-align: center
+
+        &--list
+            margin-top: 1.3vw
+            @extend %paragraphe-s
+            text-align: center
+
+    &__desserts
+        margin-top: 3.5vw
+
+        &--title
+            margin-top: 1.3vw
+            @extend %title-3
+            text-align: center
+
+        &--list
+            margin-top: 1.3vw
+            @extend %paragraphe-s
+            text-align: center
+
+.lunch-list__starters
+    @extend %paragraphe-s
+    text-align: center
+
+.lunch-list__main-courses
+    @extend %paragraphe-s
+    text-align: center
+
+.lunch-list__desserts
+    @extend %paragraphe-s
+    text-align: center

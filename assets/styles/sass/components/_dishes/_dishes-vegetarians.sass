@@ -1,0 +1,114 @@
+@use "../../../sass/utils/_main" as utils
+
+.vegetarians-dishes
+    text-align: center
+    margin-top: 20vw
+    padding-right: 5vw
+
+    &__title
+        @extend %title-2
+        text-decoration: underline
+        text-underline-offset: 0.5vw
+
+    &__list
+        margin-top: 5vw
+
+.rice-vegetables
+    margin-top: 17vw
+    +utils.responsive(tablet)
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+
+    &__image
+        width: 30vw
+
+    &__description
+        margin-top: 5vw
+        padding: 5vw
+
+        &--title
+            @extend %title-3
+
+        &--details
+            @extend %paragraphe-s
+
+    &__price
+        @extend %paragraphe-s
+        color: utils.$brown
+
+.vegetables-soups
+    margin-top: 17vw
+    +utils.responsive(tablet)
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+
+    &__image
+        width: 30vw
+
+    &__description
+        margin-top: 5vw
+        padding: 5vw
+
+        &--title
+            @extend %title-3
+
+        &--details
+            @extend %paragraphe-s
+
+    &__price
+        @extend %paragraphe-s
+        color: utils.$brown
+
+.vegetables-tower
+    margin-top: 17vw
+    +utils.responsive(tablet)
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+
+    &__image
+        width: 30vw
+
+    &__description
+        margin-top: 5vw
+        padding: 5vw
+
+        &--title
+            @extend %title-3
+
+        &--details
+            @extend %paragraphe-s
+
+    &__price
+        @extend %paragraphe-s
+        color: utils.$brown
+
+.potatoes-garlic-soups
+    margin-top: 17vw
+    +utils.responsive(tablet)
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+
+    &__image
+        width: 30vw
+
+    &__description
+        margin-top: 5vw
+        padding: 5vw
+
+        &--title
+            @extend %title-3
+
+        &--details
+            @extend %paragraphe-s
+
+    &__price
+        @extend %paragraphe-s
+        color: utils.$brown
