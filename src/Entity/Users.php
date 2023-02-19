@@ -14,7 +14,7 @@ use Symfony\Component\Uid\Uuid;
 
 #[ORM\Entity(repositoryClass: UsersRepository::class)]
 #[UniqueEntity('email', 'Cet email existe déjà au sein de cette application.')]
-#[ORM\EntityListeners(['App\EntityListener\UsersListener'])]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class Users implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -28,10 +28,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\Email(message: 'Veuillez renseigner un email valide.')]
     private ?string $email = null;
 
-    private ?string $plainPassword = null;
-
     #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank(message: 'Veuillez renseigner un mot de passe.')]
     private ?string $password = null;
 
     #[ORM\Column(type: 'json')]
@@ -107,18 +104,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         return (string) $this->email;
     }
 
-    public function getPlainPassword()
-    {
-        return $this->plainPassword;
-    }
-
-    public function setPlainPassword($plainPassword)
-    {
-        $this->plainPassword = $plainPassword;
-
-        return $this;
-    }
-
     public function getPassword(): ?string
     {
         return $this->password;
@@ -138,7 +123,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function eraseCredentials()
     {
-        $this->plainPassword = null;
     }
 
     public function getRoles(): array

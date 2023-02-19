@@ -24,7 +24,6 @@ class UsersFixtures extends Fixture
             $user->setName($this->faker->lastName())
                 ->setFirstname($this->faker->firstName())
                 ->setEmail($this->faker->email())
-                ->setPlainPassword('password')
                 ->setDefaultNumberOfGuests($this->faker->numberBetween(1, 6));
             
                 $manager->persist($user);
