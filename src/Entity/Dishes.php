@@ -38,7 +38,7 @@ class Dishes
     #[ORM\JoinColumn(nullable: false)]
     private ?Categories $category = null;
 
-    #[ORM\ManyToMany(targetEntity: Menus::class, inversedBy: 'dish')]
+    #[ORM\ManyToMany(targetEntity: Menus::class, mappedBy: 'dish')]
     private Collection $menu;
 
     public function __construct()
@@ -120,6 +120,7 @@ class Dishes
     {
         if (!$this->menu->contains($menu)) {
             $this->menu->add($menu);
+            $menu->addDish($this);
         }
 
         return $this;
@@ -127,7 +128,9 @@ class Dishes
 
     public function removeMenu(Menus $menu): self
     {
-        $this->menu->removeElement($menu);
+        if ($this->menu->removeElement($menu)) {
+            $menu->removeDish($this);
+        }
 
         return $this;
     }

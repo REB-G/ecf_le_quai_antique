@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ReservationRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -28,6 +30,25 @@ class Reservation
 
     #[ORM\ManyToOne(inversedBy: 'reservation')]
     private ?Tables $restaurantTable = null;
+
+    #[ORM\Column]
+    private ?int $numberOfGuests = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\ManyToMany(targetEntity: Allergies::class, inversedBy: 'reservation')]
+    private Collection $allergy;
+
+    public function __construct()
+    {
+        $this->allergy = new ArrayCollection();
+        $this->createdAt = new \DateTimeImmutable();
+        $this->updatedAt = new \DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
@@ -78,6 +99,63 @@ class Reservation
     public function setRestaurantTable(?Tables $restaurantTable): self
     {
         $this->restaurantTable = $restaurantTable;
+
+        return $this;
+    }
+
+    public function getNumberOfGuests(): ?int
+    {
+        return $this->numberOfGuests;
+    }
+
+    public function setNumberOfGuests(int $numberOfGuests): self
+    {
+        $this->numberOfGuests = $numberOfGuests;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getAllergy(): Collection
+    {
+        return $this->allergy;
+    }
+
+    public function addAllergy(Allergies $allergy): self
+    {
+        if (!$this->allergy->contains($allergy)) {
+            $this->allergy->add($allergy);
+        }
+
+        return $this;
+    }
+
+    public function removeAllergy(Allergies $allergy): self
+    {
+        $this->allergy->removeElement($allergy);
 
         return $this;
     }

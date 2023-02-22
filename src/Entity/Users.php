@@ -13,8 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Uid\Uuid;
 
 #[ORM\Entity(repositoryClass: UsersRepository::class)]
-#[UniqueEntity('email', 'Cet email existe déjà au sein de cette application.')]
-#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[UniqueEntity(fields: ['email'], message: 'Cet email existe déjà au sein de cette application.')]
 class Users implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -46,9 +45,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'integer')]
     #[Assert\NotBlank(message: 'Veuillez renseigner un nombre de convives par défaut.')]
     private ?int $defaultNumberOfGuests = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $allergies = null;
     
     #[ORM\Column(type: 'datetime_immutable', options: ['default' => 'CURRENT_TIMESTAMP'])]
     #[Assert\NotNull()]
@@ -63,12 +59,16 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Reservation::class)]
     private Collection $reservation;
 
+    #[ORM\ManyToMany(targetEntity: Allergies::class, inversedBy: 'user')]
+    private Collection $allergy;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
         $this->updatedAt = new \DateTimeImmutable();
         $this->restaurantTable = new ArrayCollection();
         $this->reservation = new ArrayCollection();
+        $this->allergy = new ArrayCollection();
     }
 
     #[ORM\PreUpdate]
@@ -199,18 +199,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-
-    public function getAllergies(): ?string
-    {
-        return $this->allergies;
-    }
-
-    public function setAllergies(?string $allergies): self
-    {
-        $this->allergies = $allergies;
-
-        return $this;
-    }
     
     public function getRestaurantTable(): Collection
     {
@@ -260,6 +248,27 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
                 $reservation->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAllergy(): Collection
+    {
+        return $this->allergy;
+    }
+
+    public function addAllergy(Allergies $allergy): self
+    {
+        if (!$this->allergy->contains($allergy)) {
+            $this->allergy->add($allergy);
+        }
+
+        return $this;
+    }
+
+    public function removeAllergy(Allergies $allergy): self
+    {
+        $this->allergy->removeElement($allergy);
 
         return $this;
     }

@@ -25,7 +25,7 @@ class Menus
     #[Assert\Positive(message: 'Le prix du menu doit être supérieur à 0.')]
     private ?float $price = null;
 
-    #[ORM\ManyToMany(targetEntity: Dishes::class, mappedBy: 'menu')]
+    #[ORM\ManyToMany(targetEntity: Dishes::class, inversedBy: 'menu')]
     private Collection $dish;
 
     public function __construct()
@@ -38,7 +38,7 @@ class Menus
         return $this->id;
     }
 
-    public function geTTitle(): ?string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
@@ -71,7 +71,6 @@ class Menus
     {
         if (!$this->dish->contains($dish)) {
             $this->dish->add($dish);
-            $dish->addMenu($this);
         }
 
         return $this;
@@ -79,9 +78,7 @@ class Menus
 
     public function removeDish(Dishes $dish): self
     {
-        if ($this->dish->removeElement($dish)) {
-            $dish->removeMenu($this);
-        }
+        $this->dish->removeElement($dish);
 
         return $this;
     }
