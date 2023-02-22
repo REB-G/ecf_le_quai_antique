@@ -12,12 +12,13 @@
     {{ form_row(registrationForm.plainPassword, {
         label: 'Password'
     }) }}
-    {{ form_row(registration.name) }}
-    {{ form_row(registration.firstname) }}
-    {{ form-row(registration.defaultNumberOfGuests) }}
+    {{ form_row(registrationForm.name) }}
+    {{ form_row(registrationForm.firstname) }}
+    {{ form_row(registrationForm.defaultNumberOfGuests) }}
+    {{ form_row(registrationForm.allergy) }}
     {{ form_row(registrationForm.agreeTerms) }}
 
-    <button type="submit" class="btn">Register</button>
+    <button type="submit" class="btn">S'inscire</button>
 </section>
 {{ form_end(registrationForm) }}
 {% endblock %}

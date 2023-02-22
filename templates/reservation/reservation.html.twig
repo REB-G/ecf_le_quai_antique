@@ -5,4 +5,17 @@
 {% block body %}
 <h1>Formulaire de réservation.</h1>
 
+{{ form_start(registrationForm) }}
+<section>
+    {{ form_row(registrationForm.reservationDate) }}
+    {{ form_row(registrationForm.reservationTime) }}
+    {{ form_row(registrationForm.numberOfGuests) }}
+    {{ form_row(registrationForm.allergy) }}
+    {{ form_row(registrationForm.user) }}
+    {{ form_row(registrationForm.restaurantTime)}}
+
+    <button type="submit" class="btn">S'inscire</button>
+</section>
+{{ form_end(registrationForm) }}
+
 {% endblock %}
