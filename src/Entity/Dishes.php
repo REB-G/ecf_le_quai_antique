@@ -30,9 +30,8 @@ class Dishes
     #[Assert\Positive(message: 'Le prix du plat doit être supérieur à 0.')]
     private ?float $price = null;
 
-    #[ORM\Column(type: Types::BLOB)]
-    #[Assert\NotBlank(message: 'Veuillez renseigner l\'image du plat.')]
-    private $picture = null;
+    #[ORM\Column(length: 255)]
+    private ?string $picture = null;
 
     #[ORM\ManyToOne(inversedBy: 'dish')]
     #[ORM\JoinColumn(nullable: false)]
@@ -87,12 +86,12 @@ class Dishes
         return $this;
     }
 
-    public function getPicture()
+    public function getPicture(): ?string
     {
         return $this->picture;
     }
 
-    public function setPicture($picture): self
+    public function setPicture(string $picture): self
     {
         $this->picture = $picture;
 
@@ -133,6 +132,11 @@ class Dishes
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 }
 
