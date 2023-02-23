@@ -2,50 +2,46 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Users;
+use App\Entity\Reservation;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TimeField;
 
-class UsersCrudController extends AbstractCrudController
+class ReservationCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Users::class;
+        return Reservation::class;
     }
 
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setEntityLabelInSingular('Utilisateur')
-            ->setEntityLabelInPlural('Utilisateurs')
+            ->setEntityLabelInSingular('Réservation')
+            ->setEntityLabelInPlural('Réservations')
             ->setPageTitle('index', 'Liste des %entity_label_plural%')
             ->setPaginatorPageSize(10)
             ->setDefaultSort(['id' => 'ASC']);
     }
-
     
     public function configureFields(string $pageName): iterable
     {
         return [
             IdField::new('id')
                 ->setFormTypeOption('disabled', true),
-            TextField::new('name'),
-            TextField::new('firstname'),
-            EmailField::new('email'),
-            ArrayField::new('roles'),
-            IntegerField::new('defaultNumberOfGuests'),
+            IntegerField::new('numberOfGuests'),
+            DateField::new('reservationDate'),
+            TimeField::new('reservationTime'),
+            TextField::new('user'),
             CollectionField::new('allergy'),
-            DateTimeField::new('createdAt')
-                ->setFormTypeOption('disabled', true),
-            DateTimeField::new('updatedAt')
-                ->setFormTypeOption('disabled', true),
+            DateField::new('createdAt'),
+            DateField::new('updatedAt'),
         ];
     }
+    
 }

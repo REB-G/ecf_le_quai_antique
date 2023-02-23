@@ -2,24 +2,26 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Allergies;
+use App\Entity\Menus;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 
-class AllergiesCrudController extends AbstractCrudController
+class MenusCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Allergies::class;
+        return Menus::class;
     }
 
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setEntityLabelInSingular('Allergie')
-            ->setEntityLabelInPlural('Allergies')
+            ->setEntityLabelInSingular('Menu')
+            ->setEntityLabelInPlural('Menus')
             ->setPageTitle('index', 'Liste des %entity_label_plural%')
             ->setDefaultSort(['id' => 'ASC']);
     }
@@ -29,7 +31,10 @@ class AllergiesCrudController extends AbstractCrudController
         return [
             IdField::new('id')
                 ->setFormTypeOption('disabled', true),
-            TextField::new('name'),
+            TextField::new('title'),
+            IntegerField::new('price'),
+            CollectionField::new('dish'),
         ];
     }
+    
 }
