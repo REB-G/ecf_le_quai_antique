@@ -5,17 +5,17 @@
 {% block body %}
 <h1>Formulaire de réservation.</h1>
 
-{{ form_start(registrationForm) }}
+{{ form_start(reservationForm) }}
 <section>
-    {{ form_row(registrationForm.reservationDate) }}
-    {{ form_row(registrationForm.reservationTime) }}
-    {{ form_row(registrationForm.numberOfGuests) }}
-    {{ form_row(registrationForm.allergy) }}
-    {{ form_row(registrationForm.user) }}
-    {{ form_row(registrationForm.restaurantTime)}}
+    {{ form_row(reservationForm.reservationDate) }}
+    {{ form_row(reservationForm.numberOfGuests) }}
+    {{ form_row(reservationForm.reservationTime) }}
+    {{ form_row(reservationForm.user) }}
+    {{ form_row(reservationForm.allergy) }}
+    {{ form_row(reservationForm.restaurantTime)}}
 
-    <button type="submit" class="btn">S'inscire</button>
+    <button type="submit" class="btn">Réserver</button>
 </section>
-{{ form_end(registrationForm) }}
+{{ form_end(reservationForm) }}
 
 {% endblock %}
