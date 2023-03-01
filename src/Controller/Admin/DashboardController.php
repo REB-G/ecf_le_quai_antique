@@ -9,6 +9,7 @@ use App\Entity\Dishes;
 use App\Entity\Menus;
 use App\Entity\Reservation;
 use App\Entity\Tables;
+use App\Entity\Restaurant;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -40,5 +41,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Menus', 'fas fa-list', Menus::class);
         yield MenuItem::linkToCrud('Réservations', 'fas fa-list', Reservation::class);
         yield MenuItem::linkToCrud('Tables', 'fas fa-list', Tables::class);
+        yield MenuItem::linkToCrud('Restaurant', 'fas fa-list', Restaurant::class);
+        yield MenuItem::linkToRoute('Retour au site', 'fas fa-home', 'home');
+        yield MenuItem::linkToLogout('Se déconeccter', 'fa fa-exit');
     }
 }

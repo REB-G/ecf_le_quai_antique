@@ -10,8 +10,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 
 class UsersCrudController extends AbstractCrudController
 {
@@ -35,17 +35,16 @@ class UsersCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')
+                ->hideOnForm(),
+            TextField::new('name', 'Nom'),
+            TextField::new('firstname', 'Prénom'),
+            EmailField::new('email', 'Email'),
+            ArrayField::new('roles', 'Rôles'),
+            IntegerField::new('defaultNumberOfGuests', 'Nombre de convives par défaut'),
+            AssociationField::new('allergy', 'Allergies'),
+            DateTimeField::new('createdAt', 'Créé le')
                 ->setFormTypeOption('disabled', true),
-            TextField::new('name'),
-            TextField::new('firstname'),
-            EmailField::new('email'),
-            ArrayField::new('roles'),
-            IntegerField::new('defaultNumberOfGuests'),
-            CollectionField::new('allergy'),
-            DateTimeField::new('createdAt')
-                ->setFormTypeOption('disabled', true),
-            DateTimeField::new('updatedAt')
-                ->setFormTypeOption('disabled', true),
+            DateTimeField::new('updatedAt', 'Modifié le')
         ];
     }
 }

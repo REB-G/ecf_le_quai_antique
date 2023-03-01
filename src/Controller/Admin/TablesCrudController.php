@@ -32,12 +32,12 @@ class TablesCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')
-                ->setFormTypeOption('disabled', true),
-            IntegerField::new('tableNumber'),
-            IntegerField::new('numberOfPlaces'),
-            BooleanField::new('isAvailable'),
-            TextField::new('user'),
-            CollectionField::new('reservation'),
+                ->hideOnForm(),
+            IntegerField::new('tableNumber', 'Numéro de la table'),
+            IntegerField::new('numberOfPlaces', 'Nombre de places'),
+            BooleanField::new('isAvailable', 'Disponibilité'),
+            TextField::new('user', 'Nom du client ayant réservé la table'),
+            CollectionField::new('reservation', 'Réservations de la table'),
         ];
     }
 }

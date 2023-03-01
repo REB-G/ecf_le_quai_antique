@@ -28,8 +28,8 @@ class CategoriesCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')
-                ->setFormTypeOption('disabled', true),
-            TextField::new('name'),
+                ->hideOnForm(),
+            TextField::new('name', 'Nom de la catégorie'),
         ];
     }
     

@@ -33,14 +33,14 @@ class ReservationCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')
-                ->setFormTypeOption('disabled', true),
-            IntegerField::new('numberOfGuests'),
-            DateField::new('reservationDate'),
-            TimeField::new('reservationTime'),
-            TextField::new('user'),
-            CollectionField::new('allergy'),
-            DateField::new('createdAt'),
-            DateField::new('updatedAt'),
+                ->hideOnForm(),
+            IntegerField::new('numberOfGuests', 'Nombre de convives'),
+            DateField::new('reservationDate', 'Date de la réservation'),
+            TimeField::new('reservationTime', 'Heure de la réservation'),
+            TextField::new('user', 'Nom du client ayant réservé la table'),
+            CollectionField::new('allergy', 'Allergies du client'),
+            DateField::new('createdAt', 'Créé le'),
+            DateField::new('updatedAt', 'Modifié le'),
         ];
     }
     
