@@ -28,26 +28,31 @@ class Reservation
     #[ORM\ManyToOne(inversedBy: 'reservation')]
     private ?Users $user = null;
 
-    #[ORM\ManyToOne(inversedBy: 'reservation')]
-    private ?Tables $restaurantTable = null;
-
     #[ORM\Column]
     private ?int $numberOfGuests = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $updatedAt = null;
-
     #[ORM\ManyToMany(targetEntity: Allergies::class, inversedBy: 'reservation')]
     private Collection $allergy;
+
+    #[ORM\Column(length: 255)]
+    private ?string $name = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $firstname = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $email = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $allergies = null;
 
     public function __construct()
     {
         $this->allergy = new ArrayCollection();
         $this->createdAt = new \DateTimeImmutable();
-        $this->updatedAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -91,18 +96,6 @@ class Reservation
         return $this;
     }
 
-    public function getRestaurantTable(): ?Tables
-    {
-        return $this->restaurantTable;
-    }
-
-    public function setRestaurantTable(?Tables $restaurantTable): self
-    {
-        $this->restaurantTable = $restaurantTable;
-
-        return $this;
-    }
-
     public function getNumberOfGuests(): ?int
     {
         return $this->numberOfGuests;
@@ -123,18 +116,6 @@ class Reservation
     public function setCreatedAt(\DateTimeImmutable $createdAt): self
     {
         $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeImmutable
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
 
         return $this;
     }
@@ -163,5 +144,53 @@ class Reservation
     public function __toString(): string
     {
         return $this->reservationDate->format('d/m/Y') . ' ' . $this->reservationTime->format('H:i');
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
+
+    public function setFirstname(string $firstname): self
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getAllergies(): ?string
+    {
+        return $this->allergies;
+    }
+
+    public function setAllergies(string $allergies): self
+    {
+        $this->allergies = $allergies;
+
+        return $this;
     }
 }

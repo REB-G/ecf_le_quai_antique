@@ -28,6 +28,9 @@ class Restaurant
     #[ORM\Column(length: 255)]
     private ?string $openingHours = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $adress = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +92,18 @@ class Restaurant
     public function setOpeningHours(string $openingHours): self
     {
         $this->openingHours = $openingHours;
+
+        return $this;
+    }
+
+    public function getAdress(): ?string
+    {
+        return $this->adress;
+    }
+
+    public function setAdress(string $adress): self
+    {
+        $this->adress = $adress;
 
         return $this;
     }
