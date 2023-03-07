@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Quai Antique - Plat{% endblock %}
+
+{% block body %}
+
+    <h1>{{dish.name}}</h1>
+    <img class="bruschetta__image" src="{{ vich_uploader_asset(dish, 'imageFile') }}" alt={{dish.name}}>
+    <div class="bruschetta__description">
+        <p class="bruschetta__description--title">{{dish.name}}</p>
+        <p class="bruschetta__description--details">{{dish.description}}</p>
+    </div>
+    <p class="bruschetta__price">{{dish.price}}</p>
+    <a href="{{ path('app_dishes_index') }}">Retour à la liste des plats</a>
+    <a href="{{ path('app_dishes_edit', {'id': dish.id}) }}">Modifier</a>
+    {{ include('dishes/_delete_form.html.twig') }}
+
+{% endblock %}

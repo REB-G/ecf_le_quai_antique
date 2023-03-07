@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Quai Antique - Création d'un nouveau menu{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un nouveau menu</h1>
+
+    {{ include('menus/_form.html.twig') }}
+
+    <a href="{{ path('app_menus_index') }}">Retourner à la liste des menus</a>
+{% endblock %}

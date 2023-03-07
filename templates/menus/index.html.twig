@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plats - Le Quai Antique{% endblock %}
+
+{% block body %}
+<section class="main">
+	<h1 class="main__title">Nos Menus</h1>
+	<p class="main__description">Nous avons 3 menus disponibles :
+		<a class="main__description--link">la formule du midi</a>,
+		<a class="main__description--link">le Duo</a>, et
+		<a class="main__description--link">les Gourmands</a>.</p>
+        <p class="main__description">Tous nos plats sont fait maison avec des produits de qualité et locaux.</p>
+</section>
+
+<section class="lunch-menu">
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('app_menus_new') }}">Ajouter un menu</a>
+    {% endif %}
+    {% for menu in menus %}
+	<div class="lunch-menu__description">
+		<h2 class="lunch-menu__description--title">{{menu.title}}</h2>
+		<p class="lunch-menu__description--text">{{menu.description}}</p>
+        <p class="lunch-menu__description--price">{{menu.price}}</p>
+        {% if menu.dish is empty %}
+            <p>Voir la carte du jour proposée au restaurant.</p>
+        {% else %}
+            <p>Entrée :</p>
+            <ul>
+                {% for dish in menu.dish | filter(dish => dish.category == "Entrée") %}
+                <li>{{dish.name}}</li>
+                {% endfor %}
+            </ul>
+            <p>Plat :</p>
+            <ul>
+                {% for dish in menu.dish | filter(dish => dish.category == "Plat") %}
+                <li>{{dish.name}}</li>
+                {% endfor %}
+            </ul>
+            <p>Dessert :</p>
+            <ul>
+                {% for dish in menu.dish | filter(dish => dish.category == "Dessert") %}
+                <li>{{dish.name}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('app_menus_edit', {'id': menu.id}) }}">Modifier</a>
+            <a href="{{ path('app_menus_delete', {'id': menu.id}) }}">Supprimer</a>
+        {% endif %}
+	</div>
+    {% endfor %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menus{% endblock %}
+
+{% block body %}
+
+	<h2 class="lunch-menu__description--title">{{menu.title}}</h2>
+	<p class="lunch-menu__description--text">{{menu.description}}</p>
+    <p class="lunch-menu__description--price">{{menu.price}}</p>
+    {% if menu.dish is empty %}
+        <p>Voir la carte du jour proposée au restaurant.</p>
+    {% else %}
+        <p>Entrée :</p>
+        <ul>
+            {% for dish in menu.dish | filter(dish => dish.category == "Entrée") %}
+            <li>{{dish.name}}</li>
+            {% endfor %}
+        </ul>
+        <p>Plat :</p>
+        <ul>
+            {% for dish in menu.dish | filter(dish => dish.category == "Plat") %}
+            <li>{{dish.name}}</li>
+            {% endfor %}
+        </ul>
+        <p>Dessert :</p>
+        <ul>
+            {% for dish in menu.dish | filter(dish => dish.category == "Dessert") %}
+            <li>{{dish.name}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="{{ path('app_menus_edit', {'id': menu.id}) }}">Modifier</a>
+    <a href="{{ path('app_menus_index') }}">Retourner à la liste des menus</a>
+    {{ include('menus/_delete_form.html.twig') }}
+{% endblock %}

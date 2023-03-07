@@ -12,6 +12,9 @@
 				<a href="{{path('app_dishes')}}" class="btn btn__primary header__link">La carte</a>
 				<a href="{{path('app_menus')}}" class="btn btn__primary header__link">Nos menus</a>
 				<a href="{{path('app_reservation')}}" class="btn btn__primary header__link">Réserver</a>
+				{% if is_granted('ROLE_ADMIN') %}
+					<a href="{{path('admin')}}" class="btn btn__primary header__link">Administration</a>
+				{% endif %}
 				{% if app.user %}
 					<a href="{{path('app_home')}}" class="btn btn__primary header__link">Mon compte</a>
 					<a href="{{path('app_logout')}}" class="btn btn__primary header__link">Se déconnecter</a>
