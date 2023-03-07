@@ -20,6 +20,9 @@ class Menus
     #[Assert\NotBlank(message: 'Veuillez renseigner le nom du menu.')]
     private ?string $title = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $description = null;
+
     #[ORM\Column]
     #[Assert\NotBlank(message: 'Veuillez renseigner le prix du menu.')]
     #[Assert\Positive(message: 'Le prix du menu doit être supérieur à 0.')]
@@ -50,6 +53,17 @@ class Menus
         return $this;
     }
 
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
     public function getPrice(): ?float
     {
         return $this->price;
@@ -81,5 +95,10 @@ class Menus
         $this->dish->removeElement($dish);
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->title;
     }
 }

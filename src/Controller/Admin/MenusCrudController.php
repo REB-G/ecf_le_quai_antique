@@ -6,9 +6,10 @@ use App\Entity\Menus;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 
 class MenusCrudController extends AbstractCrudController
 {
@@ -32,8 +33,9 @@ class MenusCrudController extends AbstractCrudController
             IdField::new('id')
                 ->hideOnForm(),
             TextField::new('title', 'Nom du menu'),
-            MoneyField::new('price', 'Prix du menu')->setCurrency('EUR'),
-            CollectionField::new('dish', 'Plats du menu'),
+            TextareaField::new('description', 'Description du menu'),
+            NumberField::new('price', 'Prix du menu'),
+            AssociationField::new('dish', 'Plats du menu'),
         ];
     }
     

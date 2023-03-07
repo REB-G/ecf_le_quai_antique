@@ -7,10 +7,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class ReservationCrudController extends AbstractCrudController
 {
@@ -34,13 +34,13 @@ class ReservationCrudController extends AbstractCrudController
         return [
             IdField::new('id')
                 ->hideOnForm(),
+            TextField::new('name', 'Nom du client'),
+            TextField::new('firstname', 'Prénom du client'),
             IntegerField::new('numberOfGuests', 'Nombre de convives'),
             DateField::new('reservationDate', 'Date de la réservation'),
-            TimeField::new('reservationTime', 'Heure de la réservation'),
-            TextField::new('user', 'Nom du client ayant réservé la table'),
-            CollectionField::new('allergy', 'Allergies du client'),
+            AssociationField::new('reservationHour', 'Heure de la réservation'),
+            AssociationField::new('allergy', 'Allergies du client'),
             DateField::new('createdAt', 'Créé le'),
-            DateField::new('updatedAt', 'Modifié le'),
         ];
     }
     

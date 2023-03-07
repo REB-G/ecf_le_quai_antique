@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\ReservationRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Allergies;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ReservationRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ReservationRepository::class)]
@@ -17,13 +18,9 @@ class Reservation
     #[ORM\Column(type: 'integer', unique: true)]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::DATE_IMMUTABLE)]
-    #[Assert\NotBlank('Veuillez renseigner la date pour les réservation.')]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    // #[Assert\NotBlank('Veuillez renseigner la date pour les réservation.')]
     private ?\DateTimeInterface $reservationDate = null;
-
-    #[ORM\Column(type: Types::TIME_IMMUTABLE)]
-    #[Assert\NotBlank('Veuillez renseigner l\'heure pour les réservation.')]
-    private ?\DateTimeInterface $reservationTime = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservation')]
     private ?Users $user = null;
@@ -46,8 +43,8 @@ class Reservation
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $allergies = null;
+    #[ORM\ManyToOne(inversedBy: 'reservations')]
+    private ?ReservationTime $reservationHour = null;
 
     public function __construct()
     {
@@ -68,18 +65,6 @@ class Reservation
     public function setReservationDate(\DateTimeInterface $reservationDate): self
     {
         $this->reservationDate = $reservationDate;
-
-        return $this;
-    }
-
-    public function getReservationTime(): ?\DateTimeInterface
-    {
-        return $this->reservationTime;
-    }
-
-    public function setReservationTime(\DateTimeInterface $reservationTime): self
-    {
-        $this->reservationTime = $reservationTime;
 
         return $this;
     }
@@ -143,7 +128,7 @@ class Reservation
 
     public function __toString(): string
     {
-        return $this->reservationDate->format('d/m/Y') . ' ' . $this->reservationTime->format('H:i');
+        return $this->reservationDate->format('d/m/Y') . ' - ' . $this->reservationHour->getHour()->format('H:i');
     }
 
     public function getName(): ?string
@@ -182,14 +167,14 @@ class Reservation
         return $this;
     }
 
-    public function getAllergies(): ?string
+    public function getReservationHour(): ?ReservationTime
     {
-        return $this->allergies;
+        return $this->reservationHour;
     }
 
-    public function setAllergies(string $allergies): self
+    public function setReservationHour(?ReservationTime $reservationHour): self
     {
-        $this->allergies = $allergies;
+        $this->reservationHour = $reservationHour;
 
         return $this;
     }

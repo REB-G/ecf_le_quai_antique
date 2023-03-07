@@ -53,9 +53,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Tables::class)]
-    private Collection $restaurantTable;
-
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Reservation::class)]
     private Collection $reservation;
 
@@ -66,7 +63,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->createdAt = new \DateTimeImmutable();
         $this->updatedAt = new \DateTimeImmutable();
-        $this->restaurantTable = new ArrayCollection();
         $this->reservation = new ArrayCollection();
         $this->allergy = new ArrayCollection();
     }
@@ -196,32 +192,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-    
-    public function getRestaurantTable(): Collection
-    {
-        return $this->restaurantTable;
-    }
-
-    public function addRestaurantTable(Tables $restaurantTable): self
-    {
-        if (!$this->restaurantTable->contains($restaurantTable)) {
-            $this->restaurantTable->add($restaurantTable);
-            $restaurantTable->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeRestaurantTable(Tables $restaurantTable): self
-    {
-        if ($this->restaurantTable->removeElement($restaurantTable)) {
-            if ($restaurantTable->getUser() === $this) {
-                $restaurantTable->setUser(null);
-            }
-        }
 
         return $this;
     }

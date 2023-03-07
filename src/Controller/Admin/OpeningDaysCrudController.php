@@ -2,24 +2,25 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Restaurant;
+use App\Entity\OpeningDays;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
-class RestaurantCrudController extends AbstractCrudController
+class OpeningDaysCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Restaurant::class;
+        return OpeningDays::class;
     }
 
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setEntityLabelInSingular('Restaurant')
+            ->setEntityLabelInSingular('Jour d\'ouverture')
+            ->setEntityLabelInPlural('Jours d\'ouverture')
             ->setPageTitle('index', 'Liste des %entity_label_plural%')
             ->setDefaultSort(['id' => 'ASC']);
     }
@@ -29,13 +30,8 @@ class RestaurantCrudController extends AbstractCrudController
         return [
             IdField::new('id')
                 ->hideOnForm(),
-            TextField::new('name', 'Nom du restaurant'),
-            TextField::new('phoneNumber', 'Numéro de téléphone'),
-            IntegerField::new('nbrTotalOfPlaces', 'Nombre total de places'),
-            TextField::new('openingDays', 'Jours d\'ouverture'),
-            TextField::new('openingHours', 'Heures d\'ouverture'),
-            TextField::new('adress', 'Adresse'),
+            TextField::new('day', 'Jour d\'ouverture'),
+            AssociationField::new('service', 'Service assurés'),
         ];
     }
-    
 }

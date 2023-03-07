@@ -7,9 +7,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: DishesRepository::class)]
+#[Vich\Uploadable]
 class Dishes
 {
     #[ORM\Id]
@@ -30,8 +33,11 @@ class Dishes
     #[Assert\Positive(message: 'Le prix du plat doit être supérieur à 0.')]
     private ?float $price = null;
 
+    #[Vich\UploadableField(mapping: 'dishes_images', fileNameProperty: 'imageName')]
+    private ?File $imageFile = null;
+
     #[ORM\Column(length: 255)]
-    private ?string $picture = null;
+    private ?string $imageName = null;
 
     #[ORM\ManyToOne(inversedBy: 'dish')]
     #[ORM\JoinColumn(nullable: false)]
@@ -86,14 +92,26 @@ class Dishes
         return $this;
     }
 
-    public function getPicture(): ?string
+    public function getImageFile()
     {
-        return $this->picture;
+        return $this->imageFile;
     }
 
-    public function setPicture(string $picture): self
+    public function setImageFile($imageFile): self
     {
-        $this->picture = $picture;
+        $this->imageFile = $imageFile;
+
+        return $this;
+    }
+
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
+
+    public function setImageName($imageName): self
+    {
+        $this->imageName = $imageName;
 
         return $this;
     }
@@ -139,4 +157,3 @@ class Dishes
         return $this->name;
     }
 }
-
