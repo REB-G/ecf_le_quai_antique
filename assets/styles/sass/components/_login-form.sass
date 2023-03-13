@@ -1,52 +1,53 @@
 @use "../utils/_main" as utils
 
-.resa-form
+.login-form
+    display: flex
+    align-items: center
+    justify-content: space-around
+    flex-direction: column
+    height: 40%
+    margin-top: 3vw
+
     &__title
         @extend %title-1
         text-align: center
-        margin-top: 5vw
+        margin-top: 3vw
 
-    &__flux
-        display: flex
-        align-items: center
-        justify-content: space-around
-        flex-direction: column
-        height: 110vw
-        margin-top: 5vw
-
-    &__form
-        display: flex
-        height: 100%
-        flex-direction: column
-        align-items: stretch
-        justify-content: space-around
-
-    &__field
+    &__email
         align-items: baseline
         display: flex
         flex-direction: row
         flex-wrap: wrap
         align-content: stretch
         justify-content: space-between
+        width: 35%
+
         &--label
             @extend %paragraphe-s
 
         &--input
             @extend %paragraphe-s
-            margin-left: 5vw
+
+    &__password
+        align-items: baseline
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        align-content: stretch
+        justify-content: space-between
+        width: 35%
+
+        &--label
+            @extend %paragraphe-s
+
+        &--input
+            @extend %paragraphe-s
 
     &__button
         background-color: utils.$brown
         color: utils.$gold
         @extend %paragraphe-s
         text-align: center
-        margin-top: 5vw
         &:hover
             background-color: utils.$gold
             color: utils.$black
-
-#reservation_form_allergy
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center

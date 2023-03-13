@@ -13,7 +13,7 @@ ul {
   list-style: none;
 }
 
-.resa-form__title, .main-dishes__title, .main__title {
+.register-form__title, .login-form__title, .resa-form__title, .main-dishes__title, .main__title {
   font-family: "garamond", serif;
   font-size: 3rem;
 }
@@ -43,7 +43,7 @@ ul {
   font-size: 1.7rem;
 }
 
-.resa-form__label, .resa-form__input, .resa-form__button, .gourmet-coffee__description--details, .gourmet-coffee__price, .cheesecake__description--details, .cheesecake__price, .chocolate-ice-cream__description--details, .chocolate-ice-cream__price, .chocolate-caramel-cake__description--details, .chocolate-caramel-cake__price, .chocolate-marshmallows-cake__description--details, .chocolate-marshmallows-cake__price, .cream-cake__description--details, .cream-cake__price, .rice-vegetables__description--details, .rice-vegetables__price, .vegetables-soups__description--details, .vegetables-soups__price, .vegetables-tower__description--details, .vegetables-tower__price, .potatoes-garlic-soups__description--details, .potatoes-garlic-soups__price, .double-cheddar-burger__description--details, .double-cheddar-burger__price, .double-cheese-burger__description--details, .double-cheese-burger__price, .meat-burger__description--details, .meat-burger__price, .black-bread-burger__description--details, .black-bread-burger__price, .reblochon-burger__description--details, .reblochon-burger__price, .berthoud__description--details, .berthoud__price, .camembert__description--details, .camembert__price, .croziflette__description--details, .croziflette__price, .reblochon-cheese-fondue__description--details, .reblochon-cheese-fondue__price, .three-cheese-fondue__description--details, .three-cheese-fondue__price, .meat-fondue__description--details, .meat-fondue__price, .charcuterie-platter__description--details, .charcuterie-platter__price, .raclette-for-two__description--details, .raclette-for-two__price, .raclette-for-many__description--details, .raclette-for-many__price, .reblochon-tart__description--details, .reblochon-tart__price, .tartiflette__description--details, .tartiflette__price, .bruschetta__description--details, .bruschetta__price, .lettuce__description--details, .lettuce__price, .quinoa__description--details, .quinoa__price, .goat-cheese-salad__description--details, .goat-cheese-salad__price, .pasta-salad__description--details, .pasta-salad__price, .gourmands-menu__main-courses--list, .gourmands-menu__desserts--description, .gourmands-menu__desserts--list, .gourmands-list__main-courses, .gourmands-list__desserts, .duo-menu__main-courses--list, .duo-menu__desserts--list, .duo-list__main-courses, .duo-list__desserts, .lunch-menu__starters--list, .lunch-menu__main-courses--list, .lunch-menu__desserts--list, .lunch-list__starters, .lunch-list__main-courses, .lunch-list__desserts, .menu__btn, .lunch-menu__information, .menu__dish, .menu__modification--modifier, .menu__modification--delete, .header__link {
+.register-form__field--label, .register-form__field--input, .register-form__button, .login-form__email--label, .login-form__email--input, .login-form__password--label, .login-form__password--input, .login-form__button, .resa-form__field--label, .resa-form__field--input, .resa-form__button, .gourmet-coffee__description--details, .gourmet-coffee__price, .cheesecake__description--details, .cheesecake__price, .chocolate-ice-cream__description--details, .chocolate-ice-cream__price, .chocolate-caramel-cake__description--details, .chocolate-caramel-cake__price, .chocolate-marshmallows-cake__description--details, .chocolate-marshmallows-cake__price, .cream-cake__description--details, .cream-cake__price, .rice-vegetables__description--details, .rice-vegetables__price, .vegetables-soups__description--details, .vegetables-soups__price, .vegetables-tower__description--details, .vegetables-tower__price, .potatoes-garlic-soups__description--details, .potatoes-garlic-soups__price, .double-cheddar-burger__description--details, .double-cheddar-burger__price, .double-cheese-burger__description--details, .double-cheese-burger__price, .meat-burger__description--details, .meat-burger__price, .black-bread-burger__description--details, .black-bread-burger__price, .reblochon-burger__description--details, .reblochon-burger__price, .berthoud__description--details, .berthoud__price, .camembert__description--details, .camembert__price, .croziflette__description--details, .croziflette__price, .reblochon-cheese-fondue__description--details, .reblochon-cheese-fondue__price, .three-cheese-fondue__description--details, .three-cheese-fondue__price, .meat-fondue__description--details, .meat-fondue__price, .charcuterie-platter__description--details, .charcuterie-platter__price, .raclette-for-two__description--details, .raclette-for-two__price, .raclette-for-many__description--details, .raclette-for-many__price, .reblochon-tart__description--details, .reblochon-tart__price, .tartiflette__description--details, .tartiflette__price, .bruschetta__description--details, .bruschetta__price, .lettuce__description--details, .lettuce__price, .quinoa__description--details, .quinoa__price, .goat-cheese-salad__description--details, .goat-cheese-salad__price, .pasta-salad__description--details, .pasta-salad__price, .gourmands-menu__main-courses--list, .gourmands-menu__desserts--description, .gourmands-menu__desserts--list, .gourmands-list__main-courses, .gourmands-list__desserts, .duo-menu__main-courses--list, .duo-menu__desserts--list, .duo-list__main-courses, .duo-list__desserts, .lunch-menu__starters--list, .lunch-menu__main-courses--list, .lunch-menu__desserts--list, .lunch-list__starters, .lunch-list__main-courses, .lunch-list__desserts, .menu__btn, .lunch-menu__information, .menu__dish, .menu__modification--modifier, .menu__modification--delete, .header__link {
   font-family: "franckruehl", serif;
   font-size: 1.3rem;
 }
@@ -1378,7 +1378,7 @@ body {
 
 .resa-form__title {
   text-align: center;
-  margin-top: 10vw;
+  margin-top: 5vw;
 }
 .resa-form__flux {
   display: flex;
@@ -1386,15 +1386,24 @@ body {
   justify-content: space-around;
   flex-direction: column;
   height: 110vw;
+  margin-top: 5vw;
 }
 .resa-form__form {
   display: flex;
-  height: 100vw;
+  height: 100%;
   flex-direction: column;
   align-items: stretch;
   justify-content: space-around;
 }
-.resa-form__input {
+.resa-form__field {
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-between;
+}
+.resa-form__field--input {
   margin-left: 5vw;
 }
 .resa-form__button {
@@ -1409,6 +1418,94 @@ body {
 }
 
 #reservation_form_allergy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 40%;
+  margin-top: 3vw;
+}
+.login-form__title {
+  text-align: center;
+  margin-top: 3vw;
+}
+.login-form__email {
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-between;
+  width: 35%;
+}
+.login-form__password {
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-between;
+  width: 35%;
+}
+.login-form__button {
+  background-color: #8D3B09;
+  color: #D6BE74;
+  text-align: center;
+}
+.login-form__button:hover {
+  background-color: #D6BE74;
+  color: #000000;
+}
+
+.register-form__title {
+  text-align: center;
+  margin-top: 5vw;
+}
+.register-form__flux {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 5vw;
+}
+.register-form__form {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+}
+.register-form__field {
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-between;
+}
+.register-form__field--input {
+  margin-left: 5vw;
+}
+.register-form__button {
+  background-color: #8D3B09;
+  color: #D6BE74;
+  text-align: center;
+  margin-top: 5vw;
+}
+.register-form__button:hover {
+  background-color: #D6BE74;
+  color: #000000;
+}
+
+#registration_form_allergy {
   display: flex;
   flex-direction: column;
   align-items: center;
