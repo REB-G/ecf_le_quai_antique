@@ -25,7 +25,7 @@ class ReservationFormType extends AbstractType
             ],
             'label' => 'Nom',
             'label_attr' => [
-                'class' => 'resa-form__label'
+                'class' => 'resa-form__field--label'
             ],
             'attr' => [
                 'placeholder' => 'Nom',

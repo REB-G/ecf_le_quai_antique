@@ -22,27 +22,33 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
+                'row_attr' => [
+                    'class' => 'register-form__field'
+                ],
                 'label' => 'Email',
                 'label_attr' => [
-                    'class' => ''
+                    'class' => 'register-form__field--label'
                 ],
                 'attr' => [
                     'placeholder' => 'Email',
-                    'class' => '',
+                    'class' => 'register-form__field--input',
                 ],
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
+                'row_attr' => [
+                    'class' => 'register-form__field'
+                ],
                 'label' => 'Mot de passe',
                 'label_attr' => [
-                    'class' => ''
+                    'class' => 'register-form__field--label'
                 ],
                 'attr' => [
                     'autocomplete' => 'new-password',
                     'placeholder' => 'Mot de passe',
-                    'class' => '',
+                    'class' => 'register-form__field--input',
                 ],
                 'constraints' => [
                     new NotBlank([
@@ -57,33 +63,42 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('name', TextType::class, [
+                'row_attr' => [
+                    'class' => 'register-form__field'
+                ],
                 'label' => 'Nom',
                 'label_attr' => [
-                    'class' => ''
+                    'class' => 'register-form__field--label'
                 ],
                 'attr' => [
                     'placeholder' => 'Nom',
-                    'class' => '',
+                    'class' => 'register-form__field--input',
                 ],
             ])
             ->add('firstname', TextType::class, [
+                'row_attr' => [
+                    'class' => 'register-form__field'
+                ],
                 'label' => 'Prénom',
                 'label_attr' => [
-                    'class' => ''
+                    'class' => 'register-form__field--label'
                 ],
                 'attr' => [
                     'placeholder' => 'Prénom',
-                    'class' => '',
+                    'class' => 'register-form__field--input',
                 ],
             ])
             ->add('defaultNumberOfGuests', IntegerType::class, [
+                'row_attr' => [
+                    'class' => 'register-form__field'
+                ],
                 'label' => 'Nombre de convives par défaut',
                 'label_attr' => [
-                    'class' => ''
+                    'class' => 'register-form__field--label'
                 ],
                 'attr' => [
                     'placeholder' => 'Nombre de convives par défaut',
-                    'class' => '',
+                    'class' => 'register-form__field--input',
                 ],
             ])
             ->add('allergy', EntityType::class, [
@@ -93,14 +108,20 @@ class RegistrationFormType extends AbstractType
                 'expanded' => true,
                 'label' => 'Allergies',
                 'label_attr' => [
-                    'class' => ''
+                    'class' => 'register-form__field--label'
                 ],
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
+                'row_attr' => [
+                    'class' => 'register-form__field'
+                ],
                 'label' => 'Veuillez accepter nos conditions générales d\'utilisation',
                 'label_attr' => [
-                    'class' => ''
+                    'class' => 'register-form__field--label'
+                ],
+                'attr' => [
+                    'class' => 'register-form__field--input',
                 ],
                 'constraints' => [
                     new IsTrue([
