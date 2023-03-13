@@ -8,12 +8,12 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.sass';
 import './styles/sass/style.sass';
-import { Tooltip, Toast, Popover } from 'bootstrap'
+// import { Tooltip, Toast, Popover } from 'bootstrap'
 
 // start the Stimulus application
-import './bootstrap';
+// import './bootstrap';
 
 // Import all of Bootstrap's JS
-import * as bootstrap from 'bootstrap'
+// import * as bootstrap from 'bootstrap'
 
 import './js/script.js';
