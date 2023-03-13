@@ -1,0 +1,44 @@
+@use "../utils/_main" as utils
+
+.resa-form
+    &__title
+        @extend %title-1
+        text-align: center
+        margin-top: 10vw
+
+    &__flux
+        display: flex
+        align-items: center
+        justify-content: space-around
+        flex-direction: column
+        height: 110vw
+
+    &__form
+        display: flex
+        height: 100vw
+        flex-direction: column
+        align-items: stretch
+        justify-content: space-around
+
+    &__label
+        @extend %paragraphe-s
+
+    &__input
+        @extend %paragraphe-s
+        margin-left: 5vw
+
+    &__button
+        background-color: utils.$brown
+        color: utils.$gold
+        @extend %paragraphe-s
+        text-align: center
+        margin-top: 5vw
+        &:hover
+            background-color: utils.$gold
+            color: utils.$black
+
+#reservation_form_allergy
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center

@@ -13,7 +13,7 @@ ul {
   list-style: none;
 }
 
-.main-dishes__title, .main__title {
+.resa-form__title, .main-dishes__title, .main__title {
   font-family: "garamond", serif;
   font-size: 3rem;
 }
@@ -23,7 +23,7 @@ ul {
   font-size: 2.3rem;
 }
 
-.gourmet-coffee__description--title, .cheesecake__description--title, .chocolate-ice-cream__description--title, .chocolate-caramel-cake__description--title, .chocolate-marshmallows-cake__description--title, .cream-cake__description--title, .rice-vegetables__description--title, .vegetables-soups__description--title, .vegetables-tower__description--title, .potatoes-garlic-soups__description--title, .double-cheddar-burger__description--title, .double-cheese-burger__description--title, .meat-burger__description--title, .black-bread-burger__description--title, .reblochon-burger__description--title, .berthoud__description--title, .camembert__description--title, .croziflette__description--title, .reblochon-cheese-fondue__description--title, .three-cheese-fondue__description--title, .meat-fondue__description--title, .charcuterie-platter__description--title, .raclette-for-two__description--title, .raclette-for-many__description--title, .reblochon-tart__description--title, .tartiflette__description--title, .bruschetta__description--title, .lettuce__description--title, .quinoa__description--title, .goat-cheese-salad__description--title, .pasta-salad__description--title, .gourmands-menu__main-courses--title, .gourmands-menu__desserts--title, .duo-menu__main-courses--title, .duo-menu__desserts--title, .lunch-menu__starters--title, .lunch-menu__main-courses--title, .lunch-menu__desserts--title {
+.gourmet-coffee__description--title, .cheesecake__description--title, .chocolate-ice-cream__description--title, .chocolate-caramel-cake__description--title, .chocolate-marshmallows-cake__description--title, .cream-cake__description--title, .rice-vegetables__description--title, .vegetables-soups__description--title, .vegetables-tower__description--title, .potatoes-garlic-soups__description--title, .double-cheddar-burger__description--title, .double-cheese-burger__description--title, .meat-burger__description--title, .black-bread-burger__description--title, .reblochon-burger__description--title, .berthoud__description--title, .camembert__description--title, .croziflette__description--title, .reblochon-cheese-fondue__description--title, .three-cheese-fondue__description--title, .meat-fondue__description--title, .charcuterie-platter__description--title, .raclette-for-two__description--title, .raclette-for-many__description--title, .reblochon-tart__description--title, .tartiflette__description--title, .bruschetta__description--title, .lettuce__description--title, .quinoa__description--title, .goat-cheese-salad__description--title, .pasta-salad__description--title, .gourmands-menu__main-courses--title, .gourmands-menu__desserts--title, .duo-menu__main-courses--title, .duo-menu__desserts--title, .lunch-menu__starters--title, .lunch-menu__main-courses--title, .lunch-menu__desserts--title, .menu__category {
   font-family: "garamond", serif;
   font-size: 1.7rem;
 }
@@ -43,7 +43,7 @@ ul {
   font-size: 1.7rem;
 }
 
-.gourmet-coffee__description--details, .gourmet-coffee__price, .cheesecake__description--details, .cheesecake__price, .chocolate-ice-cream__description--details, .chocolate-ice-cream__price, .chocolate-caramel-cake__description--details, .chocolate-caramel-cake__price, .chocolate-marshmallows-cake__description--details, .chocolate-marshmallows-cake__price, .cream-cake__description--details, .cream-cake__price, .rice-vegetables__description--details, .rice-vegetables__price, .vegetables-soups__description--details, .vegetables-soups__price, .vegetables-tower__description--details, .vegetables-tower__price, .potatoes-garlic-soups__description--details, .potatoes-garlic-soups__price, .double-cheddar-burger__description--details, .double-cheddar-burger__price, .double-cheese-burger__description--details, .double-cheese-burger__price, .meat-burger__description--details, .meat-burger__price, .black-bread-burger__description--details, .black-bread-burger__price, .reblochon-burger__description--details, .reblochon-burger__price, .berthoud__description--details, .berthoud__price, .camembert__description--details, .camembert__price, .croziflette__description--details, .croziflette__price, .reblochon-cheese-fondue__description--details, .reblochon-cheese-fondue__price, .three-cheese-fondue__description--details, .three-cheese-fondue__price, .meat-fondue__description--details, .meat-fondue__price, .charcuterie-platter__description--details, .charcuterie-platter__price, .raclette-for-two__description--details, .raclette-for-two__price, .raclette-for-many__description--details, .raclette-for-many__price, .reblochon-tart__description--details, .reblochon-tart__price, .tartiflette__description--details, .tartiflette__price, .bruschetta__description--details, .bruschetta__price, .lettuce__description--details, .lettuce__price, .quinoa__description--details, .quinoa__price, .goat-cheese-salad__description--details, .goat-cheese-salad__price, .pasta-salad__description--details, .pasta-salad__price, .gourmands-menu__main-courses--list, .gourmands-menu__desserts--description, .gourmands-menu__desserts--list, .gourmands-list__main-courses, .gourmands-list__desserts, .duo-menu__main-courses--list, .duo-menu__desserts--list, .duo-list__main-courses, .duo-list__desserts, .lunch-menu__starters--list, .lunch-menu__main-courses--list, .lunch-menu__desserts--list, .lunch-list__starters, .lunch-list__main-courses, .lunch-list__desserts, .header__link {
+.resa-form__label, .resa-form__input, .resa-form__button, .gourmet-coffee__description--details, .gourmet-coffee__price, .cheesecake__description--details, .cheesecake__price, .chocolate-ice-cream__description--details, .chocolate-ice-cream__price, .chocolate-caramel-cake__description--details, .chocolate-caramel-cake__price, .chocolate-marshmallows-cake__description--details, .chocolate-marshmallows-cake__price, .cream-cake__description--details, .cream-cake__price, .rice-vegetables__description--details, .rice-vegetables__price, .vegetables-soups__description--details, .vegetables-soups__price, .vegetables-tower__description--details, .vegetables-tower__price, .potatoes-garlic-soups__description--details, .potatoes-garlic-soups__price, .double-cheddar-burger__description--details, .double-cheddar-burger__price, .double-cheese-burger__description--details, .double-cheese-burger__price, .meat-burger__description--details, .meat-burger__price, .black-bread-burger__description--details, .black-bread-burger__price, .reblochon-burger__description--details, .reblochon-burger__price, .berthoud__description--details, .berthoud__price, .camembert__description--details, .camembert__price, .croziflette__description--details, .croziflette__price, .reblochon-cheese-fondue__description--details, .reblochon-cheese-fondue__price, .three-cheese-fondue__description--details, .three-cheese-fondue__price, .meat-fondue__description--details, .meat-fondue__price, .charcuterie-platter__description--details, .charcuterie-platter__price, .raclette-for-two__description--details, .raclette-for-two__price, .raclette-for-many__description--details, .raclette-for-many__price, .reblochon-tart__description--details, .reblochon-tart__price, .tartiflette__description--details, .tartiflette__price, .bruschetta__description--details, .bruschetta__price, .lettuce__description--details, .lettuce__price, .quinoa__description--details, .quinoa__price, .goat-cheese-salad__description--details, .goat-cheese-salad__price, .pasta-salad__description--details, .pasta-salad__price, .gourmands-menu__main-courses--list, .gourmands-menu__desserts--description, .gourmands-menu__desserts--list, .gourmands-list__main-courses, .gourmands-list__desserts, .duo-menu__main-courses--list, .duo-menu__desserts--list, .duo-list__main-courses, .duo-list__desserts, .lunch-menu__starters--list, .lunch-menu__main-courses--list, .lunch-menu__desserts--list, .lunch-list__starters, .lunch-list__main-courses, .lunch-list__desserts, .menu__btn, .lunch-menu__information, .menu__dish, .menu__modification--modifier, .menu__modification--delete, .header__link {
   font-family: "franckruehl", serif;
   font-size: 1.3rem;
 }
@@ -388,6 +388,39 @@ body {
   color: #D6BE74;
 }
 
+.menu__category {
+  margin-top: 3.5vw;
+}
+.menu__modification {
+  margin-top: 5vw;
+}
+.menu__modification--modifier {
+  margin-top: 1.5vw;
+  text-align: center;
+  margin-right: 0.5vw;
+  color: #8D3B09;
+  text-decoration: underline;
+  text-underline-offset: 0.5vw;
+  text-decoration-color: #D6BE74;
+}
+.menu__modification--modifier:hover {
+  color: #D6BE74;
+  text-decoration-color: #8D3B09;
+}
+.menu__modification--delete {
+  margin-top: 1.5vw;
+  text-align: center;
+  margin-left: 0.5vw;
+  color: #8D3B09;
+  text-decoration: underline;
+  text-underline-offset: 0.5vw;
+  text-decoration-color: #D6BE74;
+}
+.menu__modification--delete:hover {
+  color: #D6BE74;
+  text-decoration-color: #8D3B09;
+}
+
 .main {
   text-align: center;
   margin-top: 3vw;
@@ -406,6 +439,15 @@ body {
 .main__description--link:hover {
   color: #8D3B09;
   text-decoration-color: #8D3B09;
+}
+
+.menu__btn {
+  background-color: #8D3B09;
+  color: #D6BE74;
+}
+.menu__btn:hover {
+  background-color: #D6BE74;
+  color: #000000;
 }
 
 .lunch-menu {
@@ -1332,6 +1374,45 @@ body {
 }
 .cream-cake__price {
   color: #8D3B09;
+}
+
+.resa-form__title {
+  text-align: center;
+  margin-top: 10vw;
+}
+.resa-form__flux {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 110vw;
+}
+.resa-form__form {
+  display: flex;
+  height: 100vw;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+}
+.resa-form__input {
+  margin-left: 5vw;
+}
+.resa-form__button {
+  background-color: #8D3B09;
+  color: #D6BE74;
+  text-align: center;
+  margin-top: 5vw;
+}
+.resa-form__button:hover {
+  background-color: #D6BE74;
+  color: #000000;
+}
+
+#reservation_form_allergy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
