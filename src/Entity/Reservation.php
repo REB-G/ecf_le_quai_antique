@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Entity\Allergies;
 use Doctrine\DBAL\Types\Types;
+use App\Entity\ReservationTime;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ReservationRepository;
 use Doctrine\Common\Collections\Collection;
@@ -19,32 +20,45 @@ class Reservation
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    // #[Assert\NotBlank('Veuillez renseigner la date pour les réservation.')]
+    #[Assert\GreaterThan("now", message: "La date de réservation doit être supérieure à la date du jour")]
     private ?\DateTimeInterface $reservationDate = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservation')]
     private ?Users $user = null;
 
     #[ORM\Column]
+    #[Assert\Range(min: 1, max: 40, notInRangeMessage: "Le nombre de personnes doit être compris entre 1 et 40")]
     private ?int $numberOfGuests = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\ManyToMany(targetEntity: Allergies::class, inversedBy: 'reservation')]
+    #[ORM\JoinTable(name: 'reservation_allergies')]
     private Collection $allergy;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Veuillez renseigner un nom")]
+    #[Assert\Length(max: 255, maxMessage: "Le nom ne doit pas dépasser 255 caractères")]
+    #[Assert\Regex(pattern: "/^[a-zA-ZÀ-ÿ -]+$/", message: "Le nom ne doit contenir que des lettres")]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Veuillez renseigner un nom")]
+    #[Assert\Length(max: 255, maxMessage: "Le nom ne doit pas dépasser 255 caractères")]
+    #[Assert\Regex(pattern: "/^[a-zA-ZÀ-ÿ -]+$/", message: "Le nom ne doit contenir que des lettres")]
     private ?string $firstname = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Veuillez renseigner un email")]
+    #[Assert\Email(message: "Veuillez renseigner un email valide")]
     private ?string $email = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     private ?ReservationTime $reservationHour = null;
+
+    #[ORM\ManyToOne(inversedBy: 'reservations')]
+    private ?Services $service = null;
 
     public function __construct()
     {
@@ -126,11 +140,6 @@ class Reservation
         return $this;
     }
 
-    public function __toString(): string
-    {
-        return $this->reservationDate->format('d/m/Y') . ' - ' . $this->reservationHour->getHour()->format('H:i');
-    }
-
     public function getName(): ?string
     {
         return $this->name;
@@ -177,5 +186,34 @@ class Reservation
         $this->reservationHour = $reservationHour;
 
         return $this;
+    }
+
+    public function getService(): ?Services
+    {
+        return $this->service;
+    }
+
+    public function setService(?Services $service): self
+    {
+        $this->service = $service;
+
+        return $this;
+    }
+    public function __toString(): string
+    {
+        return $this->reservationDate->format('d/m/Y')
+        . ' ' . $this->reservationHour->getHour()
+        . ' ' . $this->service->getName()
+        . ' ' . $this->name
+        . ' ' . $this->firstname
+        . ' ' . $this->email
+        . ' ' . $this->numberOfGuests
+        . ' ' . $this->allergy
+        . ' ' . $this->createdAt->format('d/m/Y')
+        . ' ' . $this->user->getname()
+        . ' ' . $this->user->getfirstname()
+        . ' ' . $this->user->getEmail()
+        . ' ' . $this->user->getDefaultNumberOfGuests()
+        . ' ' . $this->user->getAllergy();
     }
 }

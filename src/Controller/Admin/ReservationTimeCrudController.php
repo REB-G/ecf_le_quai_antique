@@ -5,9 +5,10 @@ namespace App\Controller\Admin;
 use App\Entity\ReservationTime;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TimeField;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class ReservationTimeCrudController extends AbstractCrudController
 {
@@ -30,7 +31,7 @@ class ReservationTimeCrudController extends AbstractCrudController
         return [
             IdField::new('id')
                 ->hideOnForm(),
-            TimeField::new('hour', 'Heure de réservation possible'),
+            TextField::new('hour', 'Heure de réservation possible'),
             AssociationField::new('service', 'Service correspondant'),
         ];
     }

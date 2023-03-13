@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use DateTimeInterface;
+use App\Entity\Services;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
@@ -17,8 +18,8 @@ class ReservationTime
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::TIME_MUTABLE)]
-    private ?\DateTimeInterface $hour = null;
+    #[ORM\Column(length: 255)]
+    private ?string $hour = null;
 
     #[ORM\ManyToOne(inversedBy: 'hours')]
     #[ORM\JoinColumn(nullable: false)]
@@ -37,12 +38,12 @@ class ReservationTime
         return $this->id;
     }
 
-    public function getHour(): ?\DateTimeInterface
+    public function getHour(): ?string
     {
         return $this->hour;
     }
 
-    public function setHour(\DateTimeInterface $hour): self
+    public function setHour(?string $hour): self
     {
         $this->hour = $hour;
 
@@ -93,6 +94,6 @@ class ReservationTime
 
     public function __toString(): string
     {
-        return $this->hour->format('H:i');
+        return $this->hour;
     }
 }

@@ -39,6 +39,7 @@ class ReservationCrudController extends AbstractCrudController
             IntegerField::new('numberOfGuests', 'Nombre de convives'),
             DateField::new('reservationDate', 'Date de la réservation'),
             AssociationField::new('reservationHour', 'Heure de la réservation'),
+            AssociationField::new('service', 'Service'),
             AssociationField::new('allergy', 'Allergies du client'),
             DateField::new('createdAt', 'Créé le'),
         ];
