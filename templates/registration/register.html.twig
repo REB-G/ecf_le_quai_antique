@@ -3,17 +3,14 @@
 {% block title %}Le Quai Antique - Inscription{% endblock %}
 
 {% block body %}
-<h1>Formulaire d'inscription</h1>
+<h1 class='register-form__title'>Formulaire d'inscription</h1>
 
-<section class="test_js">
-{{ form_start(registrationForm, 
-
-) }}
+<section class="register-form__flux">
+{{ form_start(registrationForm, {'attr': {'class': 'register-form__form'}}) }}
 
     {{ form_row(registrationForm.email) }}
     {{ form_row(registrationForm.plainPassword, {
         'label': 'Mot de passe',
-
     }) }}
     {{ form_row(registrationForm.name) }}
     {{ form_row(registrationForm.firstname) }}
@@ -21,7 +18,7 @@
     {{ form_row(registrationForm.allergy) }}
     {{ form_row(registrationForm.agreeTerms) }}
 
-    <button type="submit" class="btn">S'inscire</button>
+    <button type="submit" class="btn register-form__button">S'inscire</button>
 </section>
 {{ form_end(registrationForm) }}
 </section>

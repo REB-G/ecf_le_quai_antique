@@ -3,7 +3,8 @@
 {% block title %}Le Quai Antique - Connexion{% endblock %}
 
 {% block body %}
-<form method="post">
+<h1 class="login-form__title">Veuillez vous connecter.</h1>
+<form class='login-form' method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -13,12 +14,14 @@
             Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
         </div>
     {% endif %}
-
-    <h1 class="h3 mb-3 font-weight-normal">Veuillez vous connecter.</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Mot de passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    <div class='login-form__email'>
+        <label class='login-form__email--label' for="inputEmail">Email</label>
+        <input class='login-form__email--input' type="email" value="{{ last_username }}" name="email" id="inputEmail" autocomplete="email" required autofocus>
+    </div>
+    <div class='login-form__password'>
+        <label class='login-form__password--label' for="inputPassword">Mot de passe</label>
+        <input class='login-form__password--input' type="password" name="password" id="inputPassword" autocomplete="current-password" required>
+    </div>
 
     <input type="hidden" name="_csrf_token"
         value="{{ csrf_token('authenticate') }}"
@@ -35,7 +38,7 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
+    <button class="btn login-form__button" type="submit">
         Se connecter
     </button>
 </form>

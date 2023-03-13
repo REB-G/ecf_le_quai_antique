@@ -3,19 +3,20 @@
 {% block title %}Le Quai Antique - Réservation{% endblock %}
 
 {% block body %}
-<h1>Formulaire de réservation.</h1>
+<h1 class='resa-form__title'>Formulaire de réservation.</h1>
 
-<section class="js-reservation-submit">
-{{ form_start(reservationForm) }}
-    {{ form_row(reservationForm.name) }}
+<section class="js-reservation-submit resa-form__flux">
+{{ form_start(reservationForm, {'attr': {'class': 'resa-form__form'}}) }}
+    {{ form_row(reservationForm.name)}}
     {{ form_row(reservationForm.firstname) }}
     {{ form_row(reservationForm.email) }}
     {{ form_row(reservationForm.numberOfGuests) }}
     {{ form_row(reservationForm.allergy) }}
     {{ form_row(reservationForm.reservationDate) }}
     {{ form_row(reservationForm.reservationHour) }}
-
-    <button type="submit" class="btn">Réserver</button>
+    {{ form_row(reservationForm.service) }}
+    
+    <button type="submit" class="btn resa-form__button">Réserver</button>
 {{ form_end(reservationForm) }}
 </section>
 

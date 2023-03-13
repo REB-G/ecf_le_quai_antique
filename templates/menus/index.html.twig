@@ -14,7 +14,7 @@
 
 <section class="lunch-menu">
     {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('app_menus_new') }}">Ajouter un menu</a>
+        <a href="{{ path('app_menus_new') }}" class='btn menu__btn'>Ajouter un menu</a>
     {% endif %}
     {% for menu in menus %}
 	<div class="lunch-menu__description">
@@ -22,30 +22,32 @@
 		<p class="lunch-menu__description--text">{{menu.description}}</p>
         <p class="lunch-menu__description--price">{{menu.price}}</p>
         {% if menu.dish is empty %}
-            <p>Voir la carte du jour proposée au restaurant.</p>
+            <p class='lunch-menu__information'>Voir la carte du jour proposée au restaurant.</p>
         {% else %}
-            <p>Entrée :</p>
+            <p class='menu__category'>Entrée :</p>
             <ul>
                 {% for dish in menu.dish | filter(dish => dish.category == "Entrée") %}
-                <li>{{dish.name}}</li>
+                    <li class='menu__dish'>{{dish.name}}</li>
                 {% endfor %}
             </ul>
-            <p>Plat :</p>
+            <p class='menu__category'>Plat :</p>
             <ul>
                 {% for dish in menu.dish | filter(dish => dish.category == "Plat") %}
-                <li>{{dish.name}}</li>
+                    <li class='menu__dish'>{{dish.name}}</li>
                 {% endfor %}
             </ul>
-            <p>Dessert :</p>
+            <p class='menu__category'>Dessert :</p>
             <ul>
                 {% for dish in menu.dish | filter(dish => dish.category == "Dessert") %}
-                <li>{{dish.name}}</li>
+                    <li class='menu__dish'>{{dish.name}}</li>
                 {% endfor %}
             </ul>
         {% endif %}
         {% if is_granted('ROLE_ADMIN') %}
-            <a href="{{ path('app_menus_edit', {'id': menu.id}) }}">Modifier</a>
-            <a href="{{ path('app_menus_delete', {'id': menu.id}) }}">Supprimer</a>
+            <div class='menu__modification'>
+                <a href="{{ path('app_menus_edit', {'id': menu.id}) }}" class ='menu__modification--modifier'>Modifier</a>
+                <a href="{{ path('app_menus_delete', {'id': menu.id}) }}" class ='menu__modification--delete'>Supprimer</a>
+            </div>
         {% endif %}
 	</div>
     {% endfor %}
