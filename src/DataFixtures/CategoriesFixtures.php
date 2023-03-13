@@ -13,9 +13,11 @@ class CategoriesFixtures extends Fixture
         $names = [
             'Entrée',
             'Plat',
+            'Burger',
+            'Végétarien',
             'Dessert',
         ];
-        for ($i=1; $i <= 3 ; $i++) {
+        for ($i=1; $i <= 5 ; $i++) {
             $category = new Categories();
 
             $category->setName($names[$i-1]);

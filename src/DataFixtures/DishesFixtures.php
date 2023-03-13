@@ -20,7 +20,7 @@ class DishesFixtures extends Fixture implements DependentFixtureInterface
             $dish->setName($faker->word)
                 ->setDescription($faker->text(200))
                 ->setPrice($faker->numberBetween(7, 28))
-                ->setPicture($faker->imageUrl)
+                ->setImageName('default.jpg')
                 ->setCategory($this->getReference('category_' . $faker->numberBetween(1, 3)));
             $this->addReference('dish_' . $i, $dish);
 

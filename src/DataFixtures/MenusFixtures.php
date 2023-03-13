@@ -13,9 +13,9 @@ class MenusFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager): void
     {
         $names = [
-            'Lunch Menu',
-            'Duo Menu',
-            'Gourmands Menu',
+            'Formule du midi',
+            'Menu Duo',
+            'Menu Gourmands',
         ];
 
         $prices = [
@@ -35,6 +35,7 @@ class MenusFixtures extends Fixture implements DependentFixtureInterface
 
                 $manager->persist($menu);
         }
+        
         $manager->flush();
     }
     public function getDependencies()
