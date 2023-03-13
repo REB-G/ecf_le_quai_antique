@@ -1,0 +1,43 @@
+@use "../../../sass/utils/_main" as utils
+
+.lunch-menu__information
+    @extend %paragraphe-s
+
+
+
+.menu
+    &__category
+        @extend %title-3
+        margin-top: 3.5vw
+
+    &__dish
+        @extend %paragraphe-s
+
+    &__modification
+        margin-top: 5vw
+
+        &--modifier
+            margin-top: 1.5vw
+            @extend %paragraphe-s
+            text-align: center
+            margin-right: 0.5vw 
+            color: utils.$brown
+            text-decoration: underline
+            text-underline-offset: 0.5vw
+            text-decoration-color: utils.$gold
+            &:hover
+                color: utils.$gold
+                text-decoration-color: utils.$brown
+
+        &--delete
+            margin-top: 1.5vw
+            @extend %paragraphe-s
+            text-align: center
+            margin-left: 0.5vw
+            color: utils.$brown
+            text-decoration: underline
+            text-underline-offset: 0.5vw
+            text-decoration-color: utils.$gold
+            &:hover
+                color: utils.$gold
+                text-decoration-color: utils.$brown

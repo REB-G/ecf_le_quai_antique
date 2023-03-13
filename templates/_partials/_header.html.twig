@@ -10,7 +10,7 @@
 			<nav class="header__container--nav">
 				<a href="{{path('app_home')}}" class="btn btn__primary header__link">Accueil</a>
 				<a href="{{path('app_dishes_index')}}" class="btn btn__primary header__link">La carte</a>
-				<a href="{{path('app_menus')}}" class="btn btn__primary header__link">Nos menus</a>
+				<a href="{{path('app_menus_index')}}" class="btn btn__primary header__link">Nos menus</a>
 				<a href="{{path('app_reservation')}}" class="btn btn__primary header__link">Réserver</a>
 				{% if is_granted('ROLE_ADMIN') %}
 					<a href="{{path('admin')}}" class="btn btn__primary header__link">Administration</a>
