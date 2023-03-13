@@ -36,14 +36,19 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank(message: 'Veuillez renseigner un nom.')]
+    #[Assert\Length(max: 255, maxMessage: "Le nom ne doit pas dépasser 255 caractères")]
+    #[Assert\Regex(pattern: "/^[a-zA-ZÀ-ÿ -]+$/", message: "Le nom ne doit contenir que des lettres")]
     private ?string $name = null;
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank(message: 'Veuillez renseigner un prénom.')]
+    #[Assert\Length(max: 255, maxMessage: "Le nom ne doit pas dépasser 255 caractères")]
+    #[Assert\Regex(pattern: "/^[a-zA-ZÀ-ÿ -]+$/", message: "Le nom ne doit contenir que des lettres")]
     private ?string $firstname = null;
 
     #[ORM\Column(type: 'integer')]
     #[Assert\NotBlank(message: 'Veuillez renseigner un nombre de convives par défaut.')]
+    #[Assert\Range(min: 1, max: 40, notInRangeMessage: "Le nombre de personnes doit être compris entre 1 et 40")]
     private ?int $defaultNumberOfGuests = null;
     
     #[ORM\Column(type: 'datetime_immutable', options: ['default' => 'CURRENT_TIMESTAMP'])]
@@ -57,6 +62,8 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private Collection $reservation;
 
     #[ORM\ManyToMany(targetEntity: Allergies::class, inversedBy: 'user')]
+    #[ORM\JoinTable(name: 'users_allergies')]
+    #[Assert\NotBlank(message: 'Veuillez renseigner au moins une allergie.')]
     private Collection $allergy;
 
     public function __construct()

@@ -24,10 +24,14 @@ class Services
     #[ORM\ManyToMany(targetEntity: OpeningDays::class, mappedBy: 'service')]
     private Collection $days;
 
+    #[ORM\OneToMany(mappedBy: 'service', targetEntity: Reservation::class)]
+    private Collection $reservations;
+
     public function __construct()
     {
         $this->hours = new ArrayCollection();
         $this->days = new ArrayCollection();
+        $this->reservations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -107,5 +111,35 @@ class Services
     public function __toString(): string
     {
         return $this->name;
+    }
+
+    /**
+     * @return Collection<int, Reservation>
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->setService($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getService() === $this) {
+                $reservation->setService(null);
+            }
+        }
+
+        return $this;
     }
 }
